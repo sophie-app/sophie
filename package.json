@@ -1,0 +1,14 @@
+{
+  "name": "sophie",
+  "private": true,
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint"
+  },
+  "devDependencies": {},
+  "packageManager": "pnpm@9.8.0",
+  "engines": {
+    "node": ">=20"
+  }
+}
