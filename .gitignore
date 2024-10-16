@@ -2,6 +2,7 @@
 node_modules
 .pnp
 .pnp.js
+.wrangler
 
 # Local env files
 .env
@@ -9,6 +10,7 @@ node_modules
 .env.development.local
 .env.test.local
 .env.production.local
+.dev.vars
 
 # Testing
 coverage
@@ -27,9 +29,13 @@ dist
 
 
 # Debug
+logs/
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
 # Misc
 .DS_Store
