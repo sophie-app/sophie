@@ -27,7 +27,7 @@ jobs:
         run: pnpm install --frozen-lockfile
       - name: Build
         env:
-          VITE_BACKEND_BASE_URL: https://api.chefcam.keito.dev
+          VITE_BACKEND_BASE_URL: https://sophie.mst-mkt.workers.dev
         run: pnpm build
       - name: Deploy
         uses: cloudflare/pages-action@v1
@@ -68,4 +68,4 @@ jobs:
           command: deploy ./src/index.ts
           secrets: FRONTEND_BASE_URL
         env:
-          FRONTEND_BASE_URL: https://chefcam.keito.dev
+          FRONTEND_BASE_URL: https://sophie-4ce.pages.dev
