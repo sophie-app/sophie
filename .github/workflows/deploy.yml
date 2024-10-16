@@ -66,12 +66,6 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           workingDirectory: ./apps/backend
           command: deploy ./src/index.ts
-          secrets: |
-            FRONTEND_BASE_URL
-            OPENAI_API_KEY
-            OPENAI_BASE_URL
-            AUTH_SECRET
-            GOOGLE_CLIENT_ID
-            GOOGLE_CLIENT_SECRET
+          secrets: FRONTEND_BASE_URL
         env:
           FRONTEND_BASE_URL: https://chefcam.keito.dev
