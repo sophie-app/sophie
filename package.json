@@ -2,6 +2,7 @@
   "name": "sophie",
   "private": true,
   "scripts": {
+    "prepare": "lefthook install",
     "build": "turbo build",
     "dev": "turbo dev",
     "check": "turbo check",

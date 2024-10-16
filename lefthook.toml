@@ -1,0 +1,12 @@
+[pre-commit]
+parallel = true
+
+[pre-commit.commands.frontend]
+root = "apps/frontend/"
+run = "pnpm check"
+glob = "*.{ts,tsx,css,json}"
+
+[pre-commit.commands.backend]
+root = "apps/backend/"
+run = "pnpm check"
+glob = "*.{ts,json}"
