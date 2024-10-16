@@ -1,0 +1,77 @@
+name: Deploy
+
+on:
+  workflow_run:
+    workflows: ["Checks"]
+    branches: [main]
+    types:
+      - completed
+
+jobs:
+  fontend:
+    runs-on: ubuntu-latest
+    name: Deploy Frontend to Cloudflare Pages
+    permissions:
+      contents: read
+      deployments: write
+    defaults:
+      run:
+        working-directory: ./apps/frontend
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 9
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Build
+        env:
+          VITE_BACKEND_BASE_URL: https://api.chefcam.keito.dev
+        run: pnpm build
+      - name: Deploy
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: chefcam
+          workingDirectory: ./apps/frontend
+          directory: ./dist
+          branch: main
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+  backend:
+    runs-on: ubuntu-latest
+    name: Deploy Backend to Cloudflare Workers
+    permissions:
+      contents: read
+      deployments: write
+    defaults:
+      run:
+        working-directory: ./apps/backend
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 9
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Migrate database
+        run: pnpm migrate:remote
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      - uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: ./apps/backend
+          command: deploy ./src/index.ts
+          secrets: |
+            FRONTEND_BASE_URL
+            OPENAI_API_KEY
+            OPENAI_BASE_URL
+            AUTH_SECRET
+            GOOGLE_CLIENT_ID
+            GOOGLE_CLIENT_SECRET
+        env:
+          FRONTEND_BASE_URL: https://chefcam.keito.dev
