@@ -7,6 +7,9 @@
     },
     "fix": {
       "dependsOn": ["^fix"]
+    },
+    "typecheck": {
+      "dependsOn": ["^typecheck"]
     }
   }
 }

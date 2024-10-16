@@ -5,7 +5,8 @@
     "build": "turbo build",
     "dev": "turbo dev",
     "check": "turbo check",
-    "fix": "turbo fix"
+    "fix": "turbo fix",
+    "typecheck": "turbo typecheck"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.3",
