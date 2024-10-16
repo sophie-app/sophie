@@ -1,9 +1,62 @@
 {
+  "editor.formatOnSave": true,
   "editor.defaultFormatter": "biomejs.biome",
+  "editor.tabSize": 2,
+  "editor.codeActionsOnSave": {
+    "quickfix.biome": "explicit",
+    "source.fixAll.eslint": "never"
+  },
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "files.eol": "\n",
+
+  "[css]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
   "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[javascriptreact]": {
     "editor.defaultFormatter": "biomejs.biome"
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "biomejs.biome"
-  }
+  },
+
+  "javascript.suggest.autoImports": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.suggest.autoImports": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+
+  "cSpell.ignoreWords": [
+    // libraries
+    "tailwindcss",
+    "tanstack",
+    "valibot",
+    "biomejs",
+    "clsx",
+    "tabler",
+
+    // authors
+    "imoken",
+    "gotsteven",
+
+    // others
+    "oklch",
+    "nocompatible",
+    "pseudoelements",
+    "typecheck"
+  ]
 }
