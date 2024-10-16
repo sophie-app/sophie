@@ -9,8 +9,10 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^0.0.67",
     "@hono/valibot-validator": "^0.4.0",
     "@valibot/to-json-schema": "^0.2.1",
+    "ai": "^3.4.10",
     "hono": "^4.6.5",
     "valibot": "^0.42.1"
   },
