@@ -4,9 +4,13 @@
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev",
-    "lint": "turbo lint"
+    "check": "turbo check",
+    "fix": "turbo fix"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.3",
+    "@mst-mkt/js-config": "npm:@jsr/mst-mkt__js-config@^0.0.1"
+  },
   "packageManager": "pnpm@9.8.0",
   "engines": {
     "node": ">=20"

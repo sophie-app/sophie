@@ -1,5 +1,12 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "ui": "tui",
-  "tasks": {}
+  "tasks": {
+    "check": {
+      "dependsOn": ["^check"]
+    },
+    "fix": {
+      "dependsOn": ["^fix"]
+    }
+  }
 }
