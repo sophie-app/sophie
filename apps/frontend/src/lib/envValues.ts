@@ -1,4 +1,4 @@
-import { object, parse, pipe, string, url } from 'valibot'
+import { url, object, parse, pipe, string } from 'valibot'
 
 const envValuesSchema = object({
   VITE_BACKEND_BASE_URL: pipe(string(), url()),

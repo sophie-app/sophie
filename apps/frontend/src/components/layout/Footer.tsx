@@ -51,14 +51,19 @@ export const Footer = () => (
         ))}
       </li>
     </ul>
-    <p className="text-foreground-300 text-sm">
+    <div className="flex gap-x-2 text-foreground-300 text-sm">
       {/* biome-ignore lint/correctness/noUndeclaredVariables: its declared in `src/types/vite-defined.d.ts` */}
-      &copy; {__UPDATED_YEAR__}{' '}
-      {PROJECT_AUTHOR.map((author) => (
-        <a key={author} href={`https://github.com/${author}`} className="hover:underline">
-          {author}
-        </a>
-      ))}
-    </p>
+      &copy; {__UPDATED_YEAR__}
+      <ul className="flex gap-x-1">
+        {PROJECT_AUTHOR.map((author, index) => (
+          <li key={author}>
+            <a href={`https://github.com/${author}`} className="hover:underline">
+              {author}
+            </a>
+            {index < PROJECT_AUTHOR.length - 1 && ','}
+          </li>
+        ))}
+      </ul>
+    </div>
   </footer>
 )
