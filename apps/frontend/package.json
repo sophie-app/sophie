@@ -1,0 +1,41 @@
+{
+  "name": "frontend",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "check": "biome check ./src/",
+    "fix": "biome check --write ./src/",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@tabler/icons-react": "3.18.0",
+    "@tanstack/react-router": "^1.67.0",
+    "@tanstack/router-devtools": "^1.67.0",
+    "@tanstack/router-valibot-adapter": "^1.67.0",
+    "clsx": "^2.1.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^2.5.4",
+    "ts-pattern": "^5.5.0",
+    "valibot": "^0.42.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.3",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tanstack/router-vite-plugin": "^1.66.1",
+    "@mst-mkt/js-config": "npm:@jsr/mst-mkt__js-config@^0.0.1",
+    "@types/node": "^22.7.5",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react-swc": "^3.7.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "postcss-import": "^16.1.0",
+    "react-helmet-async": "^2.0.5",
+    "tailwind-scrollbar": "^3.1.0",
+    "tailwindcss": "^3.4.13",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.9"
+  }
+}
