@@ -1,8 +1,8 @@
 import { createFactory } from 'hono/factory'
-import { corsMiddleware } from './middlewares/cors'
-import { trimTrailingSlash } from 'hono/trailing-slash'
-import { prettyJSON } from 'hono/pretty-json'
 import { poweredBy } from 'hono/powered-by'
+import { prettyJSON } from 'hono/pretty-json'
+import { trimTrailingSlash } from 'hono/trailing-slash'
+import { corsMiddleware } from './middlewares/cors'
 
 export type BindingsType = {
   FRONTEND_BASE_URL: string | undefined
