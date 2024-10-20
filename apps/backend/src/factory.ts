@@ -3,6 +3,7 @@ import { createFactory } from 'hono/factory'
 import { poweredBy } from 'hono/powered-by'
 import { prettyJSON } from 'hono/pretty-json'
 import { trimTrailingSlash } from 'hono/trailing-slash'
+import type OpenAI from 'openai'
 import { aiMiddleware } from './middlewares/ai'
 import { corsMiddleware } from './middlewares/cors'
 
@@ -11,7 +12,8 @@ export type BindingsType = {
 }
 
 type VariablesType = {
-  ai: LanguageModel
+  aiModel: LanguageModel
+  openaiClient: OpenAI
 }
 
 type HonoConfigType = {
