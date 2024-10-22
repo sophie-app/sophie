@@ -12,4 +12,13 @@ export const audioUseCases = {
 
     return text
   },
+  createSpeech: async (text: string, openaiClient: OpenAI) => {
+    const response = await openaiClient.audio.speech.create({
+      input: text,
+      model: 'tts-1',
+      voice: 'alloy',
+    })
+
+    return response
+  },
 }
