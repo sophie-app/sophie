@@ -68,3 +68,5 @@ jobs:
             OPENAI_BASE_URL
         env:
           FRONTEND_BASE_URL: https://sophie-4ce.pages.dev
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_BASE_URL: https://api.openai.com/v1
