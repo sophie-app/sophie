@@ -1,5 +1,8 @@
 {
   "name": "odpt-openapi-generated",
+  "exports": {
+    ".": "./src/schema.d.ts"
+  },
   "devDependencies": {
     "openapi-typescript": "^7.4.2",
     "typescript": "^5.6.3"
