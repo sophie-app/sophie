@@ -44,6 +44,9 @@ importers:
       openai:
         specifier: ^4.68.1
         version: 4.68.1(zod@3.23.8)
+      openapi-fetch:
+        specifier: ^0.13.0
+        version: 0.13.0
       valibot:
         specifier: ^0.42.1
         version: 0.42.1(typescript@5.6.3)
@@ -1944,6 +1947,12 @@ packages:
     peerDependenciesMeta:
       zod:
         optional: true
+
+  openapi-fetch@0.13.0:
+    resolution: {integrity: sha512-6Nlf/BDbtyHwHdNrLPUiyt4CZMzL3ZyAt55yWH8W7+Z+8aYWnvca4uZHQHXViy8KcnCMqAhLM/bifh2Yjjkf6w==}
+
+  openapi-typescript-helpers@0.0.15:
+    resolution: {integrity: sha512-opyTPaunsklCBpTK8JGef6mfPhLSnyy5a0IN9vKtx3+4aExf+KxEqYwIy3hqkedXIB97u357uLMJsOnm3GVjsw==}
 
   openapi-typescript@7.4.2:
     resolution: {integrity: sha512-SvhmSTItcEAdDUcz+wzrcg6OENpMRkHqqY2hZB01FT+NOfgLcZ1B1ML6vcQrnipONHtG9AQELiKHgGTjpNGjiQ==}
@@ -4081,6 +4090,12 @@ snapshots:
       zod: 3.23.8
     transitivePeerDependencies:
       - encoding
+
+  openapi-fetch@0.13.0:
+    dependencies:
+      openapi-typescript-helpers: 0.0.15
+
+  openapi-typescript-helpers@0.0.15: {}
 
   openapi-typescript@7.4.2(typescript@5.6.3):
     dependencies:
