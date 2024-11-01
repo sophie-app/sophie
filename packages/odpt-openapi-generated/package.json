@@ -3,5 +3,8 @@
   "devDependencies": {
     "openapi-typescript": "^7.4.2",
     "typescript": "^5.6.3"
+  },
+  "scripts": {
+    "generate": "openapi-typescript ../../odpt-openapi/dist/openapi/openapi.yaml -o ./src/schema.d.ts"
   }
 }
