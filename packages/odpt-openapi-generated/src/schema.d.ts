@@ -3195,7 +3195,10 @@ export interface operations {
     };
     DataRetrieveOperations_retrieve: {
         parameters: {
-            query?: never;
+            query: {
+                /** @description 開発者サイトにて提供されるアクセストークン */
+                "acl:consumerKey": components["schemas"]["ConsumerKey"];
+            };
             header?: never;
             path: {
                 /** @description 取得するデータのURI */
@@ -5062,6 +5065,8 @@ export interface operations {
     PlaceSearchOperations_search: {
         parameters: {
             query: {
+                /** @description 開発者サイトにて提供されるアクセストークン */
+                "acl:consumerKey": components["schemas"]["ConsumerKey"];
                 /** @description 取得する範囲の中心緯度、10進数表記、測地系はWGS84 */
                 lat: number;
                 /** @description 取得する範囲の中心経度、10進数表記、測地系はWGS84 */
@@ -5135,7 +5140,9 @@ export interface operations {
     };
     DataSearchOperations_search: {
         parameters: {
-            query?: {
+            query: {
+                /** @description 開発者サイトにて提供されるアクセストークン */
+                "acl:consumerKey": components["schemas"]["ConsumerKey"];
                 /** @description rdf:typeで指定したクラスの持つプロパティを指定して、フィルタリングを行う */
                 PREDICATE?: string;
             };
@@ -5203,7 +5210,10 @@ export interface operations {
     };
     DataDumpOperations_dump: {
         parameters: {
-            query?: never;
+            query: {
+                /** @description 開発者サイトにて提供されるアクセストークン */
+                "acl:consumerKey": components["schemas"]["ConsumerKey"];
+            };
             header?: never;
             path: {
                 /** @description 取得するデータの種別 odpt:クラス名 */
