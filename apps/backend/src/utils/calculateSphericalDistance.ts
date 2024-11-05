@@ -1,20 +1,21 @@
-export const calculateSphericalDistance = (
-  lat1: number,
-  lon1: number,
-  lat2: number,
-  lon2: number,
-): number => {
-  const toRadians = (degree: number) => degree * (Math.PI / 180)
+const degreeToRadian = (degree: number) => degree * (Math.PI / 180)
+const EarthRadiusKm = 6371
 
-  const R = 6371 // 地球の半径（km）
-  const dLat = toRadians(lat2 - lat1)
-  const dLon = toRadians(lon2 - lon1)
+export const calculateSphericalDistance = (
+  from: { lat: number; lon: number },
+  to: { lat: number; lon: number },
+): number => {
+  const deltaLatitude = degreeToRadian(to.lat - from.lat)
+  const deltaLongitude = degreeToRadian(to.lon - from.lon)
 
   const a =
-    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-    Math.cos(toRadians(lat1)) * Math.cos(toRadians(lat2)) * Math.sin(dLon / 2) * Math.sin(dLon / 2)
+    Math.sin(deltaLatitude / 2) * Math.sin(deltaLatitude / 2) +
+    Math.cos(degreeToRadian(from.lat)) *
+      Math.cos(degreeToRadian(to.lat)) *
+      Math.sin(deltaLongitude / 2) *
+      Math.sin(deltaLongitude / 2)
 
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
 
-  return R * c
+  return EarthRadiusKm * c
 }
