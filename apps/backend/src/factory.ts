@@ -8,6 +8,7 @@ import type { Client } from 'openapi-fetch'
 import type { paths } from './lib/odptApiPath'
 import { aiMiddleware } from './middlewares/ai'
 import { corsMiddleware } from './middlewares/cors'
+import { odptClientMiddleware } from './middlewares/odptClient'
 
 export type BindingsType = {
   FRONTEND_BASE_URL: string | undefined
@@ -31,6 +32,7 @@ const honoFactory = createFactory<HonoConfigType>({
   initApp: (app) => {
     app.use(corsMiddleware(), trimTrailingSlash(), prettyJSON(), poweredBy())
     app.use(aiMiddleware)
+    app.use(odptClientMiddleware)
   },
 })
 
