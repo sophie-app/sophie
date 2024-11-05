@@ -24,6 +24,6 @@ type OmitApiKey<Path extends object> = {
 
 type OmitApiKeyFromPaths = OmitApiKey<paths>
 
-export type { OmitApiKeyFromPaths as paths }
+type OdptClient = Client<OmitApiKeyFromPaths>
 
-export type OdptClient = Client<OmitApiKeyFromPaths>
+export type { OmitApiKeyFromPaths as paths, OdptClient }
