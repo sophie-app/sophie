@@ -1,26 +1,23 @@
-import type { Client } from 'openapi-fetch'
-import type { paths } from '../lib/odptApiPath'
+import type { OdptClient } from '../lib/odptApiPath'
 import { calculateSphericalDistance } from '../utils/calculateSphericalDistance'
 
 export const stationUseCases = {
-  getNearestStation: async (lat: number, lon: number, odptClient: Client<paths>) => {
-    const res = await odptClient.GET('/places/{RDF_TYPE}', {
-      params: { path: { RDF_TYPE: 'odpt:Station' }, query: { lat, lon, radius: 4000 } },
+  getNearestStation: async (lat: number, lon: number, odptClient: OdptClient) => {
+    const maxSearchRadius = 4000
+
+    const { data: stations } = await odptClient.GET('/places/{RDF_TYPE}', {
+      params: { path: { RDF_TYPE: 'odpt:Station' }, query: { lat, lon, radius: maxSearchRadius } },
     })
-    const stations = res.data
+    if (stations === undefined) throw new Error('Failed to fetch stations')
 
     const nearestStation = stations?.reduce((nearest, current) => {
       const nearestDistance = calculateSphericalDistance(
-        lat,
-        lon,
-        nearest['geo:lat'],
-        nearest['geo:long'],
+        { lat, lon },
+        { lat: nearest['geo:lat'], lon: nearest['geo:long'] },
       )
       const currentDistance = calculateSphericalDistance(
-        lat,
-        lon,
-        current['geo:lat'],
-        current['geo:long'],
+        { lat, lon },
+        { lat: current['geo:lat'], lon: current['geo:long'] },
       )
       return currentDistance < nearestDistance ? current : nearest
     })
