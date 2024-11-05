@@ -9,13 +9,19 @@
 
 ### Setup
 
-1. Install dependencies
+1. Clone the repository with submodules
+
+```bash
+git clone --recurse-submodules <repo-url>
+```
+
+2. Install dependencies
 
 ```bash
 pnpm i
 ```
 
-2. Copy Environment Variables
+3. Copy Environment Variables
 
 ```bash
 # frontend
@@ -26,7 +32,7 @@ cp ./apps/backend/.dev.vars.example ./apps/backend/.dev.vars
 
 Fill in the environment variables in the files as needed.
 
-3. Start the development server
+4. Start the development server
 
 ```bash
 pnpm dev
