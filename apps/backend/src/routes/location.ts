@@ -10,13 +10,12 @@ const postReqBodySchema = object({
 
 export const locationRoute = honoFactory
   .createApp()
-  .post('/', vValidator('json', postReqBodySchema), async (c) => {
+  .get('/', vValidator('json', postReqBodySchema), async (c) => {
     const { lat, lon } = c.req.valid('json')
-    const nearestStation = await stationUseCases
-      .getNearestStation(lat, lon, c.var.odptClient)
-      .catch(() => {
-        return c.text('Failed to get nearest station', 500)
-      })
-
-    return c.json({ station: nearestStation }, 200)
+    try {
+      const nearestStation = await stationUseCases.getNearestStation(lat, lon, c.var.odptClient)
+      return c.json({ station: nearestStation }, 200)
+    } catch (e) {
+      return c.json({ error: e }, 500)
+    }
   })
