@@ -1,10 +1,9 @@
+import type { Location } from '../types/location'
+
 const degreeToRadian = (degree: number) => degree * (Math.PI / 180)
 const EarthRadiusKm = 6371
 
-export const calculateSphericalDistance = (
-  from: { lat: number; lon: number },
-  to: { lat: number; lon: number },
-): number => {
+export const calculateSphericalDistance = (from: Location, to: Location): number => {
   const deltaLatitude = degreeToRadian(to.lat - from.lat)
   const deltaLongitude = degreeToRadian(to.lon - from.lon)
 

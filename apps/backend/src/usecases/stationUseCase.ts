@@ -1,8 +1,9 @@
 import type { OdptClient } from '../lib/odptApiPath'
+import type { Location } from '../types/location'
 import { calculateSphericalDistance } from '../utils/calculateSphericalDistance'
 
 export const stationUseCases = {
-  getNearestStation: async (lat: number, lon: number, odptClient: OdptClient) => {
+  getNearestStation: async ({ lat, lon }: Location, odptClient: OdptClient) => {
     const maxSearchRadius = 4000
 
     const { data: stations } = await odptClient.GET('/places/{RDF_TYPE}', {
