@@ -1,4 +1,5 @@
 import type { paths } from 'odpt-openapi-generated'
+import type { Client } from 'openapi-fetch'
 
 const API_KEY_PROPERTY_NAME = 'acl:consumerKey' as const
 
@@ -28,4 +29,6 @@ type OmitApiKey<Path extends object> = {
 
 type OmitApiKeyFromPaths = OmitApiKey<paths>
 
-export type { OmitApiKeyFromPaths as paths }
+type OdptClient = Client<OmitApiKeyFromPaths>
+
+export type { OmitApiKeyFromPaths as paths, OdptClient }
