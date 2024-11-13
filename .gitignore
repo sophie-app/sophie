@@ -27,6 +27,11 @@ out/
 build
 dist
 
+# otp outputs
+router-config.json
+gtfs.zip
+osm.pbf
+graph.obj
 
 # Debug
 logs/
