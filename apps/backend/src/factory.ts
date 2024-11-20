@@ -4,8 +4,7 @@ import { poweredBy } from 'hono/powered-by'
 import { prettyJSON } from 'hono/pretty-json'
 import { trimTrailingSlash } from 'hono/trailing-slash'
 import type OpenAI from 'openai'
-import type { Client } from 'openapi-fetch'
-import type { paths } from './lib/odptApiPath'
+import type { OdptClient } from './lib/odptApiPath'
 import { aiMiddleware } from './middlewares/ai'
 import { corsMiddleware } from './middlewares/cors'
 import { odptClientMiddleware } from './middlewares/odptClient'
@@ -19,8 +18,8 @@ export type BindingsType = {
 type VariablesType = {
   aiModel: LanguageModel
   openaiClient: OpenAI
-  odptClient: Client<paths>
-  odptChallengeClient: Client<paths>
+  odptClient: OdptClient
+  odptChallengeClient: OdptClient
 }
 
 type HonoConfigType = {

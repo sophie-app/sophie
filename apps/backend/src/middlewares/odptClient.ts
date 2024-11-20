@@ -23,10 +23,10 @@ export const odptClientMiddleware = createMiddleware(async (c, next) => {
   const { ODPT_ACCESS_TOKEN, ODPT_CHALLENGE_ACCESS_TOKEN } = parse(odptEnvSchema, c.env)
 
   const odptClient = createClient<paths>({
-    baseUrl: ODPT_API_BASEURL,
+    baseUrl: ODPT_API_BASEURL.href,
   })
   const odptChallengeClient = createClient<paths>({
-    baseUrl: ODPT_CHALLENGE_API_BASEURL,
+    baseUrl: ODPT_CHALLENGE_API_BASEURL.href,
   })
 
   odptClient.use(openapiClientAuthMiddleware(ODPT_ACCESS_TOKEN))

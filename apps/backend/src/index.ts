@@ -1,5 +1,6 @@
 import { honoFactory } from './factory'
 import { healthRoute } from './routes/health'
+import { nearestStationRoute } from './routes/nearestStation'
 import { speechRoute } from './routes/speech'
 import { transcriptionRoute } from './routes/transcription'
 
@@ -9,6 +10,7 @@ const routes = app
   .route('/health', healthRoute)
   .route('/transcription', transcriptionRoute)
   .route('/speech', speechRoute)
+  .route('/nearestStation', nearestStationRoute)
 
 export type HonoRoutes = typeof routes
 
