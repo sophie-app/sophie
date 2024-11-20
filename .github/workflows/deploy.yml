@@ -34,7 +34,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: chefcam
+          projectName: sophie
           workingDirectory: ./apps/frontend
           directory: ./dist
           branch: main
