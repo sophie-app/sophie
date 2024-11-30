@@ -1,3 +1,4 @@
+import type { Client } from '@urql/core'
 import type { LanguageModel } from 'ai'
 import { createFactory } from 'hono/factory'
 import { poweredBy } from 'hono/powered-by'
@@ -18,6 +19,7 @@ export type BindingsType = {
 type VariablesType = {
   aiModel: LanguageModel
   openaiClient: OpenAI
+  otpClient: Client
   odptClient: OdptClient
   odptChallengeClient: OdptClient
 }
