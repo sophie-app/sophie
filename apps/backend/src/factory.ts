@@ -9,6 +9,7 @@ import type { OdptClient } from './lib/odptApiPath'
 import { aiMiddleware } from './middlewares/ai'
 import { corsMiddleware } from './middlewares/cors'
 import { odptClientMiddleware } from './middlewares/odptClient'
+import { otpClientMiddleware } from './middlewares/otpClient'
 
 export type BindingsType = {
   FRONTEND_BASE_URL: string | undefined
@@ -34,6 +35,7 @@ const honoFactory = createFactory<HonoConfigType>({
     app.use(corsMiddleware(), trimTrailingSlash(), prettyJSON(), poweredBy())
     app.use(aiMiddleware)
     app.use(odptClientMiddleware)
+    app.use(otpClientMiddleware)
   },
 })
 
