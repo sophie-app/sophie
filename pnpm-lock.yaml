@@ -32,6 +32,9 @@ importers:
       '@hono/valibot-validator':
         specifier: ^0.4.0
         version: 0.4.0(hono@4.6.5)(valibot@0.42.1(typescript@5.6.3))
+      '@urql/core':
+        specifier: ^5.0.8
+        version: 5.0.8(graphql@16.9.0)
       '@valibot/to-json-schema':
         specifier: ^0.2.1
         version: 0.2.1(valibot@0.42.1(typescript@5.6.3))
@@ -1253,6 +1256,9 @@ packages:
 
   '@types/recordrtc@5.6.14':
     resolution: {integrity: sha512-Reiy1sl11xP0r6w8DW3iQjc1BgXFyNC7aDuutysIjpFoqyftbQps9xPA2FoBkfVXpJM61betgYPNt+v65zvMhA==}
+
+  '@urql/core@5.0.8':
+    resolution: {integrity: sha512-1GOnUw7/a9bzkcM0+U8U5MmxW2A7FE5YquuEmcJzTtW5tIs2EoS4F2ITpuKBjRBbyRjZgO860nWFPo1m4JImGA==}
 
   '@valibot/to-json-schema@0.2.1':
     resolution: {integrity: sha512-Cyb/2vz56CvRp5VzO4a0lWxCwMG3BxWZrZRd/EyDMkx1yhfeSP2r8b7SEH+s+f16vdiMEjtRws/4EiOXLZlbMQ==}
@@ -2490,6 +2496,9 @@ packages:
   wildemitter@1.2.1:
     resolution: {integrity: sha512-UMmSUoIQSir+XbBpTxOTS53uJ8s/lVhADCkEbhfRjUGFDPme/XGOb0sBWLx5sTz7Wx/2+TlAw1eK9O5lw5PiEw==}
 
+  wonka@6.3.4:
+    resolution: {integrity: sha512-CjpbqNtBGNAeyNS/9W6q3kSkKE52+FjIj7AkFlLr11s/VWGUu6a2CdYSdGxocIhIVjaW/zchesBQUKPVU69Cqg==}
+
   workerd@1.20241004.0:
     resolution: {integrity: sha512-TCFJ7Zw7svR3adg1fnlPWj/yXhjBnQloLEIJqdu57hli/GsgwlbomwrbM3mdMgbS+K9zYeaYqknXiBN0EXk3QQ==}
     engines: {node: '>=16'}
@@ -3413,6 +3422,13 @@ snapshots:
       csstype: 3.1.3
 
   '@types/recordrtc@5.6.14': {}
+
+  '@urql/core@5.0.8(graphql@16.9.0)':
+    dependencies:
+      '@0no-co/graphql.web': 1.0.11(graphql@16.9.0)
+      wonka: 6.3.4
+    transitivePeerDependencies:
+      - graphql
 
   '@valibot/to-json-schema@0.2.1(valibot@0.42.1(typescript@5.6.3))':
     dependencies:
@@ -4645,6 +4661,8 @@ snapshots:
       isexe: 2.0.0
 
   wildemitter@1.2.1: {}
+
+  wonka@6.3.4: {}
 
   workerd@1.20241004.0:
     optionalDependencies:
