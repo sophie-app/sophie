@@ -20,7 +20,7 @@ OSM_URL="https://download.geofabrik.de/asia/japan-latest.osm.pbf"
 mkdir -p ./otp
 
 # Download GTFS data
-if [ ! -f ./otp/gtfs.zip ]; then
+if [ ! -f ./docker/otp/gtfs.zip ]; then
   echo "📥 Downloading GTFS data from $GTFS_URL..."
   curl -L --retry 5 --retry-delay 5 "$GTFS_URL" -o ./otp/gtfs.zip
   echo "✅ GTFS data downloaded."
@@ -29,7 +29,7 @@ else
 fi
 
 # Download OSM data
-if [ ! -f ./otp/osm.pbf ]; then
+if [ ! -f ./docker/otp/osm.pbf ]; then
   echo "📥 Downloading OSM data from $OSM_URL..."
   curl -L --retry 5 --retry-delay 5 "$OSM_URL" -o ./otp/osm.pbf
   echo "✅ OSM data downloaded."
@@ -38,9 +38,9 @@ else
 fi
 
 # Replace [Access_Token_for_Challenge2024] in router-config.template.json with the API key
-if [ -f ./otp/router-config.template.json ]; then
+if [ -f ./docker/otp/router-config.template.json ]; then
   echo "⏳ Embedding API key into router-config.json..."
-  sed 's/\[Access_Token_for_Challenge2024\]/'"$API_KEY"'/g' ./otp/router-config.template.json > ./otp/router-config.json
+  sed 's/\[Access_Token_for_Challenge2024\]/'"$API_KEY"'/g' ./docker/otp/router-config.template.json > ./docker/otp/router-config.json
   echo "✅ API key successfully embedded in router-config.json."
 else
   echo "❌ Error: router-config.template.json not found. Exiting."
