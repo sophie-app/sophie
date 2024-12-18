@@ -11,18 +11,6 @@ services:
     environment:
       API_KEY: ${ODPT_CHALLENGE_ACCESS_TOKEN}
 
-  otp-builder:
-    image: opentripplanner/opentripplanner:2.6.0_2024-07-11T01-17
-    container_name: otp-builder
-    environment:
-      JAVA_OPTS: ${OTP_MEMORY_LIMIT}
-    volumes:
-      - ./docker/otp:/var/opentripplanner
-    entrypoint: ["sh","/var/opentripplanner/scripts/build.sh"]
-    depends_on:
-      otp-data-downloader:
-        condition: service_completed_successfully
-
   otp:
     image: opentripplanner/opentripplanner:2.6.0_2024-07-11T01-17
     container_name: otp
@@ -30,10 +18,9 @@ services:
       JAVA_OPTS: ${OTP_MEMORY_LIMIT}
     volumes:
       - ./docker/otp:/var/opentripplanner
-    command: >
-      --load --serve
+    command: ${OTP_OPTIONS}
     ports:
       - "${OTP_SERVER_PORT}:8080"
     depends_on:
-      otp-builder:
+      otp-data-downloader:
         condition: service_completed_successfully
