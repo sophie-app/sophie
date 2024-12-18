@@ -6,6 +6,13 @@
     "strict": true,
     "skipLibCheck": true,
     "lib": ["ESNext"],
-    "types": ["@cloudflare/workers-types/2023-07-01"]
+    "types": ["@cloudflare/workers-types/2023-07-01"],
+    "plugins": [
+      {
+        "name": "gql.tada/ts-plugin",
+        "schema": "./otp-schema.graphql",
+        "tadaOutputLocation": "./src/types/graphql-env.d.ts"
+      }
+    ]
   }
 }
