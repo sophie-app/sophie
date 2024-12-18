@@ -7,7 +7,7 @@ services:
     volumes:
       - ./:/working_dir
     working_dir: /working_dir
-    entrypoint: ["./docker/otp/scripts/fetch-data.sh"]
+    entrypoint: ["sh", "./docker/otp/scripts/fetch-data.sh"]
     environment:
       API_KEY: ${ODPT_CHALLENGE_ACCESS_TOKEN}
 
@@ -18,7 +18,7 @@ services:
       JAVA_OPTS: ${OTP_MEMORY_LIMIT}
     volumes:
       - ./docker/otp:/var/opentripplanner
-    entrypoint: ["./docker/otp/scripts/build.sh"]
+    entrypoint: ["sh","./docker/otp/scripts/build.sh"]
     depends_on:
       otp-data-downloader:
         condition: service_completed_successfully
