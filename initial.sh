@@ -1,35 +1,50 @@
-#!/bin/bash #
-#
-# Install curl #
-apk add curl #
-#
+#!/bin/bash
+
+# Fail the script on any error
+set -e
+
+# Install curl if not installed
+apk add --no-cache curl
+
 # Get API key from environment variable
-API_KEY=${API_KEY} #
-#
-# Download GTFS file and OSM file
-GTFS_URL="https://api-challenge2024.odpt.org/api/v4/files/JR-East/data/JR-East-Train-GTFS.zip?acl:consumerKey=$API_KEY" #
-OSM_URL="https://download.geofabrik.de/asia/japan-latest.osm.pbf" #
-#
-# Doownload GTFS data
-if [ ! -f ./otp/gtfs.zip ]; then #
-  echo "Download URL: $GTFS_URL" #
-  curl -L $GTFS_URL -o ./otp/gtfs.zip #
-  echo "Downloaded GTFS data." #
-else #
-  echo "GTFS data already exists." #
-fi #
-#
+if [ -z "$API_KEY" ]; then
+  echo "❌ Error: API_KEY is not set. Exiting."
+  exit 1
+fi
+
+# URLs for GTFS and OSM data
+GTFS_URL="https://api-challenge2024.odpt.org/api/v4/files/JR-East/data/JR-East-Train-GTFS.zip?acl:consumerKey=$API_KEY"
+OSM_URL="https://download.geofabrik.de/asia/japan-latest.osm.pbf"
+
+# Ensure the otp directory exists
+mkdir -p ./otp
+
+# Download GTFS data
+if [ ! -f ./otp/gtfs.zip ]; then
+  echo "📥 Downloading GTFS data from $GTFS_URL..."
+  curl -L --retry 5 --retry-delay 5 "$GTFS_URL" -o ./otp/gtfs.zip
+  echo "✅ GTFS data downloaded."
+else
+  echo "⏭️ GTFS data already exists. Skipping download."
+fi
+
 # Download OSM data
-if [ ! -f ./otp/osm.pbf ]; then #
-  echo "Download OSM data..." #
-  curl -L $OSM_URL -o ./otp/osm.pbf #
-  echo "Downloaded OSM data." #
-else #
-  echo "OSM data already exists." #
-fi #
-#
-# Replace [Access_Token_for_Challenge2024] in router-config.template.json with API key and create a new file
-sed 's/\[Access_Token_for_Challenge2024\]/'"$API_KEY"'/g' ./otp/router-config.template.json > ./otp/router-config.json #
-#
-echo "API key has been embedded in the configuration file." #
-#
+if [ ! -f ./otp/osm.pbf ]; then
+  echo "📥 Downloading OSM data from $OSM_URL..."
+  curl -L --retry 5 --retry-delay 5 "$OSM_URL" -o ./otp/osm.pbf
+  echo "✅ OSM data downloaded."
+else
+  echo "⏭️ OSM data already exists. Skipping download."
+fi
+
+# Replace [Access_Token_for_Challenge2024] in router-config.template.json with the API key
+if [ -f ./otp/router-config.template.json ]; then
+  echo "⏳ Embedding API key into router-config.json..."
+  sed 's/\[Access_Token_for_Challenge2024\]/'"$API_KEY"'/g' ./otp/router-config.template.json > ./otp/router-config.json
+  echo "✅ API key successfully embedded in router-config.json."
+else
+  echo "❌ Error: router-config.template.json not found. Exiting."
+  exit 1
+fi
+
+echo "🎉 Initial setup completed successfully."
