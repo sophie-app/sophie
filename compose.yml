@@ -18,7 +18,7 @@ services:
       JAVA_OPTS: ${OTP_MEMORY_LIMIT}
     volumes:
       - ./docker/otp:/var/opentripplanner
-    entrypoint: ["sh","./docker/otp/scripts/build.sh"]
+    entrypoint: ["sh","/var/opentripplanner/scripts/build.sh"]
     depends_on:
       otp-data-downloader:
         condition: service_completed_successfully
