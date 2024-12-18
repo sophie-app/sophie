@@ -4,8 +4,6 @@ services:
   otp-data-downloader:
     image: alpine
     container_name: otp-data-downloader
-    env_file:
-      - ./docker/.env
     volumes:
       - ./:/working_dir
     working_dir: /working_dir
@@ -16,8 +14,6 @@ services:
   otp-builder:
     image: opentripplanner/opentripplanner:2.6.0_2024-07-11T01-17
     container_name: otp-builder
-    env_file:
-      - ./docker/.env
     environment:
       JAVA_OPTS: ${OTP_MEMORY_LIMIT}
     volumes:
@@ -30,8 +26,6 @@ services:
   otp:
     image: opentripplanner/opentripplanner:2.6.0_2024-07-11T01-17
     container_name: otp
-    env_file:
-      - ./docker/.env
     environment:
       JAVA_OPTS: ${OTP_MEMORY_LIMIT}
     volumes:
