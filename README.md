@@ -53,3 +53,27 @@ pnpm dev
 - `pnpm fix` - Fix linting and formatting issues
 - `pnpm typecheck` - Run TypeScript type checking
 - `pnpm build` - Build frontend and backend
+
+### Environment Variables
+
+#### Frontend (`.env.local`)
+
+- `VITE_BACKEND_BASE_URL`: Base URL of the backend API
+
+#### Backend (`.dev.vars`)
+
+- `FRONTEND_BASE_URL`: Base URL of the frontend
+- `OPENAI_API_KEY`: API key for OpenAI
+- `OPENAI_BASE_URL`: Base URL for OpenAI API
+- `ODPT_ACCESS_TOKEN`: Access token for ODPT API
+- `ODPT_CHALLENGE_ACCESS_TOKEN`: Access token for ODPT Challenge API
+- `OTP_API_BASEURL`: Base URL for OpenTripPlanner API
+
+#### Docker (`.env`)
+
+- `ODPT_CHALLENGE_ACCESS_TOKEN`: Access token for ODPT Challenge API
+- `OTP_MEMORY_LIMIT`: Memory limit for OpenTripPlanner (ex: `-Xmx16G`)
+- `OTP_SERVER_PORT`: Port for OpenTripPlanner server
+- `OTP_OPTIONS`: Options for OpenTripPlanner server
+  - `--build --save --serve`: Build and save the graph and serve the server (probably only needed for the first time)
+  - `--load --serve`: Load the graph and serve the server
