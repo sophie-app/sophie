@@ -67,7 +67,7 @@ pnpm dev
 - `OPENAI_BASE_URL`: Base URL for OpenAI API
 - `ODPT_ACCESS_TOKEN`: Access token for ODPT API
 - `ODPT_CHALLENGE_ACCESS_TOKEN`: Access token for ODPT Challenge API
-- `OTP_API_BASEURL`: Base URL for OpenTripPlanner API
+- `OTP_GTFS_API_BASEURL`: Base URL for OpenTripPlanner GTFS API
 
 #### Docker (`.env`)
 
