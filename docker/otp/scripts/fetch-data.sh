@@ -7,8 +7,15 @@ set -e
 apk add --no-cache curl
 
 # Get API key from environment variable
-if [ -z "$API_KEY" ]; then
-  echo "❌ Error: API_KEY is not set. Exiting."
+if [ -z "$ODPT_CHALLENGE_ACCESS_TOKEN" ]; then
+  echo "❌ Error: ODPT_CHALLENGE_ACCESS_TOKEN is not set."
+fi
+if [ -z "$ODPT_ACCESS_TOKEN" ]; then
+  echo "❌ Error: ODPT_ACCESS_TOKEN is not set."
+fi
+
+if [ -z "$ODPT_CHALLENGE_ACCESS_TOKEN" ] || [ -z "$ODPT_ACCESS_TOKEN" ]; then
+  echo "Please set the access tokens in the environment variables."
   exit 1
 fi
 
@@ -40,7 +47,8 @@ fi
 # Replace [Access_Token_for_Challenge2024] in router-config.template.json with the API key
 if [ -f ./docker/otp/router-config.template.json ]; then
   echo "⏳ Embedding API key into router-config.json..."
-  sed 's/\[Access_Token_for_Challenge2024\]/'"$API_KEY"'/g' ./docker/otp/router-config.template.json > ./docker/otp/router-config.json
+  sed 's/\[Access_Token_for_ODPT\]/'"$ODPT_ACCESS_TOKEN"'/g' ./docker/otp/router-config.template.json > ./docker/otp/router-config.json
+  sed 's/\[Access_Token_for_Challenge2024\]/'"$ODPT_CHALLENGE_ACCESS_TOKEN"'/g' ./docker/otp/router-config.template.json > ./docker/otp/router-config.json
   echo "✅ API key successfully embedded in router-config.json."
 else
   echo "❌ Error: router-config.template.json not found. Exiting."
