@@ -30,6 +30,7 @@ dist
 # otp outputs
 router-config.json
 gtfs.zip
+*.gtfs.zip
 osm.pbf
 graph.obj
 
