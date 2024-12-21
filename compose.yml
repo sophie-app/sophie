@@ -2,12 +2,12 @@ version: "3"
 
 services:
   otp-data-downloader:
-    image: alpine
+    image: bash
     container_name: otp-data-downloader
     volumes:
       - ./:/working_dir
     working_dir: /working_dir
-    entrypoint: ["sh", "./docker/otp/scripts/fetch-data.sh"]
+    entrypoint: ["bash", "./docker/otp/scripts/fetch-data.sh"]
     environment:
       ODPT_ACCESS_TOKEN: ${ODPT_ACCESS_TOKEN}
       ODPT_CHALLENGE_ACCESS_TOKEN: ${ODPT_CHALLENGE_ACCESS_TOKEN}
