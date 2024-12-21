@@ -1,0 +1,124 @@
+{
+  "updaters": [
+    {
+      "feedId": "keio",
+      "frequencySec": 60,
+      "type": "REAL_TIME_ALERTS",
+      "url": "https://api-challenge2024.odpt.org/api/v4/gtfs/realtime/keio_odpt_train_alert?acl:consumerKey=[Access_Token_for_Challenge2024]"
+    },
+    {
+      "feedId": "tobu",
+      "type": "REAL_TIME_ALERTS",
+      "frequencySec": 60,
+      "url": "https://api-challenge2024.odpt.org/api/v4/gtfs/realtime/tobu_odpt_train_alert?acl:consumerKey=[Access_Token_for_Challenge2024]"
+    },
+    {
+      "feedId": "tobu",
+      "type": "VEHICLE_POSITIONS",
+      "frequencySec": 60,
+      "url": "https://api-challenge2024.odpt.org/api/v4/gtfs/realtime/tobu_odpt_train_vehicle?acl:consumerKey=[Access_Token_for_Challenge2024]"
+    },
+    {
+      "feedId": "tobu",
+      "type": "STOP_TIME_UPDATER",
+      "frequencySec": 60,
+      "url": "https://api-challenge2024.odpt.org/api/v4/gtfs/realtime/tobu_odpt_train_trip_update?acl:consumerKey=[Access_Token_for_Challenge2024]"
+    },
+    {
+      "feedId": "jreast",
+      "type": "REAL_TIME_ALERTS",
+      "frequencySec": 60,
+      "url": "https://api-challenge2024.odpt.org/api/v4/gtfs/realtime/jreis_odpt_train_alert?acl:consumerKey=[Access_Token_for_Challenge2024]"
+    },
+    {
+      "feedId": "jreast",
+      "type": "VEHICLE_POSITIONS",
+      "frequencySec": 60,
+      "url": "https://api-challenge2024.odpt.org/api/v4/gtfs/realtime/jreast_odpt_train_vehicle?acl:consumerKey=[Access_Token_for_Challenge2024]"
+    },
+    {
+      "feedId": "jreast",
+      "type": "STOP_TIME_UPDATER",
+      "frequencySec": 60,
+      "url": "https://api-challenge2024.odpt.org/api/v4/gtfs/realtime/jreast_odpt_train_trip_update?acl:consumerKey=[Access_Token_for_Challenge2024]"
+    },
+    {
+      "feedId": "tx",
+      "type": "REAL_TIME_ALERTS",
+      "frequencySec": 60,
+      "url": "https://api.odpt.org/api/v4/gtfs/realtime/mir_odpt_train_alert?acl:consumerKey=[Access_Token_for_ODPT]"
+    },
+    {
+      "feedId": "tamamonorail",
+      "type": "REAL_TIME_ALERTS",
+      "frequencySec": 60,
+      "url": "https://api.odpt.org/api/v4/gtfs/realtime/tamamonorail_odpt_train_alert?acl:consumerKey=[Access_Token_for_ODPT]"
+    },
+    {
+      "type": "REAL_TIME_ALERTS",
+      "feedId": "tokyometro",
+      "frequencySec": 60,
+      "url": "https://api.odpt.org/api/v4/gtfs/realtime/tokyometro_odpt_train_alert?acl:consumerKey=[Access_Token_for_ODPT]"
+    },
+    {
+      "feedId": "twr",
+      "type": "REAL_TIME_ALERTS",
+      "frequencySec": 60,
+      "url": "https://api.odpt.org/api/v4/gtfs/realtime/twr_odpt_train_alert?acl:consumerKey=[Access_Token_for_ODPT]"
+    },
+    {
+      "feedId": "toei",
+      "type": "REAL_TIME_ALERTS",
+      "frequencySec": 60,
+      "url": "https://api.odpt.org/api/v4/gtfs/realtime/toei_odpt_train_alert?acl:consumerKey=[Access_Token_for_ODPT]"
+    },
+    {
+      "feedId": "toei",
+      "type": "VEHICLE_POSITIONS",
+      "frequencySec": 60,
+      "url": "https://api.odpt.org/api/v4/gtfs/realtime/toei_odpt_train_vehicle?acl:consumerKey=[Access_Token_for_ODPT]"
+    },
+    {
+      "feedId": "toei",
+      "type": "STOP_TIME_UPDATER",
+      "frequencySec": 60,
+      "url": "https://api.odpt.org/api/v4/gtfs/realtime/toei_odpt_train_trip_update?acl:consumerKey=[Access_Token_for_ODPT]"
+    },
+    {
+      "feedId": "yokohama",
+      "type": "REAL_TIME_ALERTS",
+      "frequencySec": 60,
+      "url": "https://api.odpt.org/api/v4/gtfs/realtime/YokohamaMunicipalTrain_alert?acl:consumerKey=[Access_Token_for_ODPT]"
+    },
+    {
+      "feedId": "yokohama",
+      "type": "VEHICLE_POSITIONS",
+      "frequencySec": 60,
+      "url": "https://api.odpt.org/api/v4/gtfs/realtime/YokohamaMunicipalTrain_vehicle?acl:consumerKey=[Access_Token_for_ODPT]"
+    },
+    {
+      "feedId": "yokohama",
+      "type": "STOP_TIME_UPDATER",
+      "frequencySec": 60,
+      "url": "https://api.odpt.org/api/v4/gtfs/realtime/YokohamaMunicipalTrain_trip_update?acl:consumerKey=[Access_Token_for_ODPT]"
+    },
+    {
+      "feedId": "hakodate",
+      "type": "REAL_TIME_ALERTS",
+      "frequencySec": 60,
+      "url": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_HakodateCity_Alllines_alert"
+    },
+    {
+      "feedId": "hakodate",
+      "type": "VEHICLE_POSITIONS",
+      "frequencySec": 60,
+      "url": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_HakodateCity_Alllines_vehicle"
+    },
+    {
+      "feedId": "hakodate",
+      "type": "STOP_TIME_UPDATER",
+      "frequencySec": 60,
+      "url": "https://api-public.odpt.org/api/v4/gtfs/realtime/odpt_HakodateCity_Alllines_trip_update"
+    }
+  ]
+}
