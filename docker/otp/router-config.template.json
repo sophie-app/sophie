@@ -1,10 +1,4 @@
 {
-  "routerId": "default",
-  "gtfsRealtimeAlertsUrl": "https://api-challenge2024.odpt.org/api/v4/gtfs/realtime/jreis_odpt_train_alert?acl:consumerKey=[Access_Token_for_Challenge2024]",
-  "gtfsRealtimeTripUpdatesUrl": "https://api-challenge2024.odpt.org/api/v4/gtfs/realtime/jreast_odpt_train_trip_update?acl:consumerKey=[Access_Token_for_Challenge2024]",
-  "gtfsRealtimeVehiclePositionsUrl": "https://api-challenge2024.odpt.org/api/v4/gtfs/realtime/jreast_odpt_train_vehicle?acl:consumerKey=[Access_Token_for_Challenge2024]",
-  "transitServiceStart": "04:00",
-  "transitServiceEnd": "24:00",
   "updaters": [
     {
       "feedId": "keio",
