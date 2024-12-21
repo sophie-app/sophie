@@ -19,21 +19,39 @@ if [ -z "$ODPT_CHALLENGE_ACCESS_TOKEN" ] || [ -z "$ODPT_ACCESS_TOKEN" ]; then
   exit 1
 fi
 
-# URLs for GTFS and OSM data
-GTFS_URL="https://api-challenge2024.odpt.org/api/v4/files/JR-East/data/JR-East-Train-GTFS.zip?acl:consumerKey=$API_KEY"
+declare -A GTFS_URLS=(
+  ["HakodateCity"]="https://api-public.odpt.org/api/v4/files/odpt/HakodateCity/Alllines.zip?date=20241219"
+  ["Keio"]="https://api-challenge2024.odpt.org/api/v4/files/Keio/data/Keio-Train-GTFS.zip?acl:consumerKey=$ODPT_CHALLENGE_ACCESS_TOKEN"
+  ["Sotetsu"]="https://api-challenge2024.odpt.org/api/v4/files/Sotetsu/data/Sotetsu-Train-GTFS.zip?acl:consumerKey=$ODPT_CHALLENGE_ACCESS_TOKEN"
+  ["KyotoMunicipalTransportation"]="https://api.odpt.org/api/v4/files/odpt/KyotoMunicipalTransportation/Kyoto_City_Subway_GTFS.zip?date=20240815&acl:consumerKey=$ODPT_ACCESS_TOKEN"
+  ["JR-East"]="https://api-challenge2024.odpt.org/api/v4/files/JR-East/data/JR-East-Train-GTFS.zip?acl:consumerKey=$ODPT_CHALLENGE_ACCESS_TOKEN"
+  ["MIR"]="https://api.odpt.org/api/v4/files/MIR/data/MIR-Train-GTFS.zip?acl:consumerKey=$ODPT_ACCESS_TOKEN"
+  ["Toei"]="https://api-public.odpt.org/api/v4/files/Toei/data/Toei-Train-GTFS.zip"
+  ["Tobu"]="https://api-challenge2024.odpt.org/api/v4/files/Tobu/data/Tobu-Train-GTFS.zip?acl:consumerKey=$ODPT_CHALLENGE_ACCESS_TOKEN"
+  ["TamaMonorail"]="https://api.odpt.org/api/v4/files/TamaMonorail/data/TamaMonorail-Train-GTFS.zip?acl:consumerKey=$ODPT_ACCESS_TOKEN"
+  ["TWR"]="https://api.odpt.org/api/v4/files/TWR/data/TWR-Train-GTFS.zip?acl:consumerKey=$ODPT_ACCESS_TOKEN"
+  ["TokyoMetro"]="https://api.odpt.org/api/v4/files/TokyoMetro/data/TokyoMetro-Train-GTFS.zip?acl:consumerKey=$ODPT_ACCESS_TOKEN"
+  ["YokohamaMunicipal"]="https://api.odpt.org/api/v4/files/YokohamaMunicipal/data/YokohamaMunicipal-Train-GTFS.zip?acl:consumerKey=$ODPT_ACCESS_TOKEN"
+)
+
+# URL for OSM data
 OSM_URL="https://download.geofabrik.de/asia/japan-latest.osm.pbf"
 
 # Ensure the otp directory exists
 mkdir -p ./otp
 
 # Download GTFS data
-if [ ! -f ./docker/otp/gtfs.zip ]; then
-  echo "📥 Downloading GTFS data from $GTFS_URL..."
-  curl -L --retry 5 --retry-delay 5 "$GTFS_URL" -o ./otp/gtfs.zip
-  echo "✅ GTFS data downloaded."
-else
-  echo "⏭️ GTFS data already exists. Skipping download."
-fi
+for key in "${!GTFS_URLS[@]}"; do
+  file="./docker/otp/$key.gtfs.zip"
+  url="${GTFS_URLS[$key]}"
+  if [ ! -f "$file" ]; then
+    echo "📥 Downloading GTFS data from $url..."
+    curl -L --retry 5 --retry-delay 5 "$url" -o "$file"
+    echo "✅ GTFS data downloaded."
+  else
+    echo "⏭️ GTFS data already exists. Skipping download."
+  fi
+done
 
 # Download OSM data
 if [ ! -f ./docker/otp/osm.pbf ]; then
