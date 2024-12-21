@@ -56,7 +56,7 @@ done
 # Download OSM data
 if [ ! -f ./docker/otp/osm.pbf ]; then
   echo "📥 Downloading OSM data from $OSM_URL..."
-  curl -L --retry 5 --retry-delay 5 "$OSM_URL" -o ./otp/osm.pbf
+  curl -L --retry 5 --retry-delay 5 "$OSM_URL" -o ./docker/otp/osm.pbf
   echo "✅ OSM data downloaded."
 else
   echo "⏭️ OSM data already exists. Skipping download."
