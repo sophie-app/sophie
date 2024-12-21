@@ -65,8 +65,7 @@ fi
 # Replace [Access_Token_for_Challenge2024] in router-config.template.json with the API key
 if [ -f ./docker/otp/router-config.template.json ]; then
   echo "⏳ Embedding API key into router-config.json..."
-  sed 's/\[Access_Token_for_ODPT\]/'"$ODPT_ACCESS_TOKEN"'/g' ./docker/otp/router-config.template.json > ./docker/otp/router-config.json
-  sed 's/\[Access_Token_for_Challenge2024\]/'"$ODPT_CHALLENGE_ACCESS_TOKEN"'/g' ./docker/otp/router-config.template.json > ./docker/otp/router-config.json
+  sed 's/\[Access_Token_for_ODPT\]/'"$ODPT_ACCESS_TOKEN"'/g' ./docker/otp/router-config.template.json | sed 's/\[Access_Token_for_Challenge2024\]/'"$ODPT_CHALLENGE_ACCESS_TOKEN"'/g' > ./docker/otp/router-config.json
   echo "✅ API key successfully embedded in router-config.json."
 else
   echo "❌ Error: router-config.template.json not found. Exiting."
