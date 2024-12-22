@@ -4,7 +4,7 @@ import type { Location } from '../types/location'
 
 export const gtfsRepo = {
   getRoute: async (gtfsApiClient: Client, from: Location, to: Location) => {
-    const [currentDate] = new Date().toISOString().split('T')
+    const currentDate = new Date().toLocaleDateString('ja-JP').replace('/', '-')
     const currentTime = new Date().toLocaleTimeString('ja-JP', { hour12: false })
 
     const query = graphql(`
