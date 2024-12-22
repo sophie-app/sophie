@@ -1,34 +1,26 @@
-import { useCallback, useEffect } from 'react'
-import { THEMES } from '../constants/theme'
-import { useLocalStorage } from './useLocalStorage'
+import { useAtom } from 'jotai'
+import { atomWithStorage } from 'jotai/utils'
+import { useCallback } from 'react'
+import type { THEMES } from '../constants/theme'
 
 type Theme = (typeof THEMES)[number]
-const isDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+const isDeviceDarkTheme = window.matchMedia('(prefers-color-scheme: dark)').matches
+
+const themeAtom = atomWithStorage<Theme>('theme', isDeviceDarkTheme ? 'dark' : 'light')
 
 export const setThemeWithoutRender = () => {
   const theme = localStorage.getItem('theme')
-  const isLightTheme = theme === 'light' || (theme === null && !isDarkTheme)
+  const isLightTheme = theme === 'light' || (theme === null && !isDeviceDarkTheme)
   document.body.classList.add(isLightTheme ? 'light' : 'dark')
 }
 
 export const useTheme = () => {
-  const [theme, setTheme] = useLocalStorage<Theme>('theme', isDarkTheme ? 'dark' : 'light')
-
-  const setThemeClassNames = useCallback((theme?: Theme) => {
-    document.body.classList.remove(...THEMES)
-    if (theme !== undefined) {
-      document.body.classList.add(theme)
-    }
-  }, [])
+  const [theme, setTheme] = useAtom(themeAtom)
 
   const toggleTheme = useCallback(() => {
-    setTheme(theme === 'light' ? 'dark' : 'light')
-  }, [setTheme, theme])
-
-  useEffect(() => {
-    setThemeClassNames(theme)
-    return () => setThemeClassNames()
-  }, [theme, setThemeClassNames])
+    const newTheme = theme === 'light' ? 'dark' : 'light'
+    setTheme(newTheme)
+  }, [theme, setTheme])
 
   return { theme, setTheme, toggleTheme }
 }
