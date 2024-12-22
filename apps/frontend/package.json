@@ -14,7 +14,6 @@
     "@tabler/icons-react": "3.18.0",
     "@tanstack/react-router": "^1.92.1",
     "@tanstack/router-devtools": "^1.92.1",
-    "@tanstack/router-valibot-adapter": "^1.81.5",
     "backend": "workspace:*",
     "clsx": "^2.1.1",
     "react": "^18.3.1",
