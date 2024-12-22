@@ -8,8 +8,8 @@ import type OpenAI from 'openai'
 import type { OdptClient } from './lib/odptApiPath'
 import { aiMiddleware } from './middlewares/ai'
 import { corsMiddleware } from './middlewares/cors'
+import { gtfsApiClientMiddleware } from './middlewares/gtfsApiClient'
 import { odptClientMiddleware } from './middlewares/odptClient'
-import { otpClientMiddleware } from './middlewares/otpClient'
 
 export type BindingsType = {
   FRONTEND_BASE_URL: string | undefined
@@ -20,7 +20,7 @@ export type BindingsType = {
 type VariablesType = {
   aiModel: LanguageModel
   openaiClient: OpenAI
-  otpClient: Client
+  gtfsApiClient: Client
   odptClient: OdptClient
   odptChallengeClient: OdptClient
 }
@@ -35,7 +35,7 @@ const honoFactory = createFactory<HonoConfigType>({
     app.use(corsMiddleware(), trimTrailingSlash(), prettyJSON(), poweredBy())
     app.use(aiMiddleware)
     app.use(odptClientMiddleware)
-    app.use(otpClientMiddleware)
+    app.use(gtfsApiClientMiddleware)
   },
 })
 
