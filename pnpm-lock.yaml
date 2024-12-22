@@ -20,6 +20,9 @@ importers:
       turbo:
         specifier: ^2.1.3
         version: 2.1.3
+      typescript:
+        specifier: ^5.6.3
+        version: 5.6.3
 
   apps/backend:
     dependencies:
@@ -29,6 +32,9 @@ importers:
       '@hono/valibot-validator':
         specifier: ^0.4.0
         version: 0.4.0(hono@4.6.5)(valibot@0.42.1(typescript@5.6.3))
+      '@urql/core':
+        specifier: ^5.0.8
+        version: 5.0.8(graphql@16.9.0)
       '@valibot/to-json-schema':
         specifier: ^0.2.1
         version: 0.2.1(valibot@0.42.1(typescript@5.6.3))
@@ -60,6 +66,9 @@ importers:
       '@mst-mkt/js-config':
         specifier: npm:@jsr/mst-mkt__js-config@^0.0.1
         version: '@jsr/mst-mkt__js-config@0.0.1'
+      gql.tada:
+        specifier: ^1.8.10
+        version: 1.8.10(graphql@16.9.0)(typescript@5.6.3)
       typescript:
         specifier: ^5.6.3
         version: 5.6.3
@@ -174,6 +183,20 @@ importers:
         version: 5.6.3
 
 packages:
+
+  '@0no-co/graphql.web@1.0.11':
+    resolution: {integrity: sha512-xuSJ9WXwTmtngWkbdEoopMo6F8NLtjy84UNAMsAr5C3/2SgAL/dEU10TMqTIsipqPQ8HA/7WzeqQ9DEQxSvPPA==}
+    peerDependencies:
+      graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
+    peerDependenciesMeta:
+      graphql:
+        optional: true
+
+  '@0no-co/graphqlsp@1.12.16':
+    resolution: {integrity: sha512-B5pyYVH93Etv7xjT6IfB7QtMBdaaC07yjbhN6v8H7KgFStMkPvi+oWYBTibMFRMY89qwc9H8YixXg8SXDVgYWw==}
+    peerDependencies:
+      graphql: ^15.5.0 || ^16.0.0 || ^17.0.0
+      typescript: ^5.0.0
 
   '@ai-sdk/openai@0.0.67':
     resolution: {integrity: sha512-LOvbQaKXuNdhlZ+Asinc4DGdh4v32wKTzFB8FIKvVYjPuXwMWAsK4ZjrS6sxwB37AjmyGLPTMVBUtwcHZdpk+A==}
@@ -877,6 +900,26 @@ packages:
     resolution: {integrity: sha512-uN8J8KDjADEavPhNva6tYO9Fj0lWs9z82swF3YXnTxWMBoFLGq3LZ6FLlIldRKEzhOBKnkVfA8UnFJuvGvNxcA==}
     engines: {node: '>=12.16.1'}
 
+  '@gql.tada/cli-utils@1.6.3':
+    resolution: {integrity: sha512-jFFSY8OxYeBxdKi58UzeMXG1tdm4FVjXa8WHIi66Gzu9JWtCE6mqom3a8xkmSw+mVaybFW5EN2WXf1WztJVNyQ==}
+    peerDependencies:
+      '@0no-co/graphqlsp': ^1.12.13
+      '@gql.tada/svelte-support': 1.0.1
+      '@gql.tada/vue-support': 1.0.1
+      graphql: ^15.5.0 || ^16.0.0 || ^17.0.0
+      typescript: ^5.0.0
+    peerDependenciesMeta:
+      '@gql.tada/svelte-support':
+        optional: true
+      '@gql.tada/vue-support':
+        optional: true
+
+  '@gql.tada/internal@1.0.8':
+    resolution: {integrity: sha512-XYdxJhtHC5WtZfdDqtKjcQ4d7R1s0d1rnlSs3OcBEUbYiPoJJfZU7tWsVXuv047Z6msvmr4ompJ7eLSK5Km57g==}
+    peerDependencies:
+      graphql: ^15.5.0 || ^16.0.0 || ^17.0.0
+      typescript: ^5.0.0
+
   '@hono/valibot-validator@0.4.0':
     resolution: {integrity: sha512-X+e71gQlXkyuQLzU+awMOsYcApMP9Ga0wntDHoCiRj0gSsVJr7WRtgiPk2YeGhUnUJlm7q9ThLkYhUbqIhdCOA==}
     peerDependencies:
@@ -1304,6 +1347,9 @@ packages:
 
   '@types/recordrtc@5.6.14':
     resolution: {integrity: sha512-Reiy1sl11xP0r6w8DW3iQjc1BgXFyNC7aDuutysIjpFoqyftbQps9xPA2FoBkfVXpJM61betgYPNt+v65zvMhA==}
+
+  '@urql/core@5.0.8':
+    resolution: {integrity: sha512-1GOnUw7/a9bzkcM0+U8U5MmxW2A7FE5YquuEmcJzTtW5tIs2EoS4F2ITpuKBjRBbyRjZgO860nWFPo1m4JImGA==}
 
   '@valibot/to-json-schema@0.2.1':
     resolution: {integrity: sha512-Cyb/2vz56CvRp5VzO4a0lWxCwMG3BxWZrZRd/EyDMkx1yhfeSP2r8b7SEH+s+f16vdiMEjtRws/4EiOXLZlbMQ==}
@@ -1772,6 +1818,16 @@ packages:
     resolution: {integrity: sha512-erjk19y1U33+XAMe1VTvIONHYoSqE4iS7BYUZfHaqeohLmnC0FdxEh7rQU+6MZ4OajItzjZFSRtVANrQwNq6/g==}
     peerDependencies:
       csstype: ^3.0.10
+
+  gql.tada@1.8.10:
+    resolution: {integrity: sha512-FrvSxgz838FYVPgZHGOSgbpOjhR+yq44rCzww3oOPJYi0OvBJjAgCiP6LEokZIYND2fUTXzQAyLgcvgw1yNP5A==}
+    hasBin: true
+    peerDependencies:
+      typescript: ^5.0.0
+
+  graphql@16.9.0:
+    resolution: {integrity: sha512-GGTKBX4SD7Wdb8mqeDLni2oaRGYQWjWHGKPQ24ZMnUtKfcsVoiv4uX8+LJr1K6U5VW2Lu1BwJnj7uiori0YtRw==}
+    engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
 
   h3@1.13.0:
     resolution: {integrity: sha512-vFEAu/yf8UMUcB4s43OaDaigcqpQd14yanmOsn+NcRX3/guSKncyE2rOYhq8RIchgJrPSs/QiIddnTTR1ddiAg==}
@@ -2724,6 +2780,9 @@ packages:
   wildemitter@1.2.1:
     resolution: {integrity: sha512-UMmSUoIQSir+XbBpTxOTS53uJ8s/lVhADCkEbhfRjUGFDPme/XGOb0sBWLx5sTz7Wx/2+TlAw1eK9O5lw5PiEw==}
 
+  wonka@6.3.4:
+    resolution: {integrity: sha512-CjpbqNtBGNAeyNS/9W6q3kSkKE52+FjIj7AkFlLr11s/VWGUu6a2CdYSdGxocIhIVjaW/zchesBQUKPVU69Cqg==}
+
   workerd@1.20241004.0:
     resolution: {integrity: sha512-TCFJ7Zw7svR3adg1fnlPWj/yXhjBnQloLEIJqdu57hli/GsgwlbomwrbM3mdMgbS+K9zYeaYqknXiBN0EXk3QQ==}
     engines: {node: '>=16'}
@@ -2789,6 +2848,16 @@ packages:
     resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
 
 snapshots:
+
+  '@0no-co/graphql.web@1.0.11(graphql@16.9.0)':
+    optionalDependencies:
+      graphql: 16.9.0
+
+  '@0no-co/graphqlsp@1.12.16(graphql@16.9.0)(typescript@5.6.3)':
+    dependencies:
+      '@gql.tada/internal': 1.0.8(graphql@16.9.0)(typescript@5.6.3)
+      graphql: 16.9.0
+      typescript: 5.6.3
 
   '@ai-sdk/openai@0.0.67(zod@3.23.8)':
     dependencies:
@@ -3296,6 +3365,19 @@ snapshots:
     transitivePeerDependencies:
       - encoding
 
+  '@gql.tada/cli-utils@1.6.3(@0no-co/graphqlsp@1.12.16(graphql@16.9.0)(typescript@5.6.3))(graphql@16.9.0)(typescript@5.6.3)':
+    dependencies:
+      '@0no-co/graphqlsp': 1.12.16(graphql@16.9.0)(typescript@5.6.3)
+      '@gql.tada/internal': 1.0.8(graphql@16.9.0)(typescript@5.6.3)
+      graphql: 16.9.0
+      typescript: 5.6.3
+
+  '@gql.tada/internal@1.0.8(graphql@16.9.0)(typescript@5.6.3)':
+    dependencies:
+      '@0no-co/graphql.web': 1.0.11(graphql@16.9.0)
+      graphql: 16.9.0
+      typescript: 5.6.3
+
   '@hono/valibot-validator@0.4.0(hono@4.6.5)(valibot@0.42.1(typescript@5.6.3))':
     dependencies:
       hono: 4.6.5
@@ -3690,6 +3772,13 @@ snapshots:
 
   '@types/recordrtc@5.6.14': {}
 
+  '@urql/core@5.0.8(graphql@16.9.0)':
+    dependencies:
+      '@0no-co/graphql.web': 1.0.11(graphql@16.9.0)
+      wonka: 6.3.4
+    transitivePeerDependencies:
+      - graphql
+
   '@valibot/to-json-schema@0.2.1(valibot@0.42.1(typescript@5.6.3))':
     dependencies:
       valibot: 0.42.1(typescript@5.6.3)
@@ -3939,7 +4028,7 @@ snapshots:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.0
       '@types/estree': 1.0.6
-      acorn: 8.12.1
+      acorn: 8.14.0
       estree-walker: 3.0.3
       periscopic: 3.1.0
 
@@ -4218,6 +4307,20 @@ snapshots:
   goober@2.1.16(csstype@3.1.3):
     dependencies:
       csstype: 3.1.3
+
+  gql.tada@1.8.10(graphql@16.9.0)(typescript@5.6.3):
+    dependencies:
+      '@0no-co/graphql.web': 1.0.11(graphql@16.9.0)
+      '@0no-co/graphqlsp': 1.12.16(graphql@16.9.0)(typescript@5.6.3)
+      '@gql.tada/cli-utils': 1.6.3(@0no-co/graphqlsp@1.12.16(graphql@16.9.0)(typescript@5.6.3))(graphql@16.9.0)(typescript@5.6.3)
+      '@gql.tada/internal': 1.0.8(graphql@16.9.0)(typescript@5.6.3)
+      typescript: 5.6.3
+    transitivePeerDependencies:
+      - '@gql.tada/svelte-support'
+      - '@gql.tada/vue-support'
+      - graphql
+
+  graphql@16.9.0: {}
 
   h3@1.13.0:
     dependencies:
@@ -4853,7 +4956,7 @@ snapshots:
       '@jridgewell/sourcemap-codec': 1.5.0
       '@jridgewell/trace-mapping': 0.3.25
       '@types/estree': 1.0.6
-      acorn: 8.12.1
+      acorn: 8.14.0
       aria-query: 5.3.2
       axobject-query: 4.1.0
       code-red: 1.0.4
@@ -5083,6 +5186,8 @@ snapshots:
       isexe: 2.0.0
 
   wildemitter@1.2.1: {}
+
+  wonka@6.3.4: {}
 
   workerd@1.20241004.0:
     optionalDependencies:
