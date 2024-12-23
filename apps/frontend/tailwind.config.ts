@@ -28,19 +28,25 @@ const config = {
   theme: {
     extend: {
       spacing: {
-        "max-content": "var(--content-max-width)",
+        'max-content': 'var(--content-max-width)',
       },
       colors: {
         background: {
           DEFAULT: oklch`background`,
           ...Object.fromEntries(
-            alphas.map((alpha) => [alpha, colorMix(oklch`background`, oklch`foreground`, alpha / 10)]),
+            alphas.map((alpha) => [
+              alpha,
+              colorMix(oklch`background`, oklch`foreground`, alpha / 10),
+            ]),
           ),
         },
         foreground: {
           DEFAULT: oklch`foreground`,
           ...Object.fromEntries(
-            alphas.map((alpha) => [alpha, colorMix(oklch`foreground`, oklch`background`, alpha / 10)]),
+            alphas.map((alpha) => [
+              alpha,
+              colorMix(oklch`foreground`, oklch`background`, alpha / 10),
+            ]),
           ),
         },
         accent: {
