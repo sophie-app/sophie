@@ -82,8 +82,8 @@ importers:
         specifier: ^0.2.0
         version: 0.2.0(react@18.3.1)
       '@tabler/icons-react':
-        specifier: 3.18.0
-        version: 3.18.0(react@18.3.1)
+        specifier: ^3.26.0
+        version: 3.26.0(react@18.3.1)
       '@tailwindcss/vite':
         specifier: 4.0.0-beta.8
         version: 4.0.0-beta.8(vite@6.0.5(@types/node@22.10.2)(jiti@2.4.2)(lightningcss@1.28.2)(tsx@4.19.2)(yaml@2.6.1))
@@ -115,7 +115,7 @@ importers:
         specifier: ^5.6.0
         version: 5.6.0
       valibot:
-        specifier: ^1.0.0-beta.9
+        specifier: 1.0.0-beta.9
         version: 1.0.0-beta.9(typescript@5.7.2)
       vite-plugin-mkcert:
         specifier: ^1.17.6
@@ -1189,13 +1189,13 @@ packages:
   '@swc/types@0.1.17':
     resolution: {integrity: sha512-V5gRru+aD8YVyCOMAjMpWR1Ui577DD5KSJsHP8RAxopAH22jFz6GZd/qxqjO6MJHQhcsjvjOFXyDhyLQUnMveQ==}
 
-  '@tabler/icons-react@3.18.0':
-    resolution: {integrity: sha512-2gGMWJe67T7q6Sgb+4r/OsAjbq6hH30D6D2l02kOnl9kAauSsp/u6Gx1zteQ/GiwqRYSTEIhYMOhOV4LLa8rAw==}
+  '@tabler/icons-react@3.26.0':
+    resolution: {integrity: sha512-t18Zmu1ROktB7M8hWQ6vJw+mNpI/LPk5PPxLuE+kNB+4Zzf38GfETL8VF98inhzcfHohsggdROzMzwSAfjcAxw==}
     peerDependencies:
       react: '>= 16'
 
-  '@tabler/icons@3.18.0':
-    resolution: {integrity: sha512-zLuwTs/xjQSsGh1X5Pt6qytvM8r6lFpWo5aAiDgnX2ekrOshNs4d87PcJEkP3555gaKy0ZftgckxPzedrN00fQ==}
+  '@tabler/icons@3.26.0':
+    resolution: {integrity: sha512-oO3D4ss+DxzxqU1aDy0f1HmToyrO0gcQWIMpzHAfV1quPUx0BZYvNm5xz1DQb4DxNm/+xNvbBGLJy4pzTLYWag==}
 
   '@tailwindcss/aspect-ratio@0.4.2':
     resolution: {integrity: sha512-8QPrypskfBa7QIMuKHg2TA7BqES6vhBrDLOv8Unb6FcFyd3TjKbc6lcmb9UPQHxfl24sXoJ41ux/H7qQQvfaSQ==}
@@ -3302,12 +3302,12 @@ snapshots:
     dependencies:
       '@swc/counter': 0.1.3
 
-  '@tabler/icons-react@3.18.0(react@18.3.1)':
+  '@tabler/icons-react@3.26.0(react@18.3.1)':
     dependencies:
-      '@tabler/icons': 3.18.0
+      '@tabler/icons': 3.26.0
       react: 18.3.1
 
-  '@tabler/icons@3.18.0': {}
+  '@tabler/icons@3.26.0': {}
 
   '@tailwindcss/aspect-ratio@0.4.2(tailwindcss@4.0.0-beta.8)':
     dependencies:
