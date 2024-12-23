@@ -10,22 +10,22 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "^0.0.67",
-    "@hono/valibot-validator": "^0.4.0",
-    "@urql/core": "^5.0.8",
-    "@valibot/to-json-schema": "^0.2.1",
-    "ai": "^3.4.10",
-    "hono": "^4.6.5",
+    "@hono/valibot-validator": "^0.4.1",
+    "@urql/core": "^5.1.0",
+    "@valibot/to-json-schema": "^1.0.0-beta.3",
+    "ai": "^3.4.33",
+    "hono": "^4.6.14",
     "odpt-openapi-generated": "workspace:^",
-    "openai": "^4.68.1",
-    "openapi-fetch": "^0.13.0",
-    "valibot": "^0.42.1"
+    "openai": "^4.77.0",
+    "openapi-fetch": "^0.13.3",
+    "valibot": "^1.0.0-beta.9"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.3",
-    "@cloudflare/workers-types": "^4.20240925.0",
+    "@biomejs/biome": "^1.9.4",
+    "@cloudflare/workers-types": "^4.20241218.0",
     "@mst-mkt/js-config": "npm:@jsr/mst-mkt__js-config@^0.0.1",
     "gql.tada": "^1.8.10",
-    "typescript": "^5.6.3",
-    "wrangler": "^3.79.0"
+    "typescript": "^5.7.2",
+    "wrangler": "^3.99.0"
   }
 }

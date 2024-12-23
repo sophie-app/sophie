@@ -1,5 +1,4 @@
 import aspectRatio from '@tailwindcss/aspect-ratio'
-import scrollbar from 'tailwind-scrollbar'
 import type { Config } from 'tailwindcss'
 
 const alphas = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900] as const
@@ -24,24 +23,30 @@ const makeColorPalette = (color: string) => ({
 })
 
 const config = {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: ['./index.html', './src/**/*.{ts,tsx}', './src/**/.*.{ts,tsx}'],
   darkMode: 'class',
   theme: {
     extend: {
       spacing: {
-        "max-content": "var(--content-max-width)",
+        'max-content': 'var(--content-max-width)',
       },
       colors: {
         background: {
           DEFAULT: oklch`background`,
           ...Object.fromEntries(
-            alphas.map((alpha) => [alpha, colorMix(oklch`background`, oklch`foreground`, alpha / 10)]),
+            alphas.map((alpha) => [
+              alpha,
+              colorMix(oklch`background`, oklch`foreground`, alpha / 10),
+            ]),
           ),
         },
         foreground: {
           DEFAULT: oklch`foreground`,
           ...Object.fromEntries(
-            alphas.map((alpha) => [alpha, colorMix(oklch`foreground`, oklch`background`, alpha / 10)]),
+            alphas.map((alpha) => [
+              alpha,
+              colorMix(oklch`foreground`, oklch`background`, alpha / 10),
+            ]),
           ),
         },
         accent: {
@@ -52,7 +57,7 @@ const config = {
     },
   },
   plugins: [
-    scrollbar({ nocompatible: true, preferredStrategy: 'pseudoelements' }),
+    // scrollbar({ nocompatible: true, preferredStrategy: 'pseudoelements' }),
     aspectRatio,
   ],
 } satisfies Config

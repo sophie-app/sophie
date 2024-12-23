@@ -1,5 +1,4 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { valibotSearchValidator } from '@tanstack/router-valibot-adapter'
 import { array, object, optional, pipe, string, transform, union } from 'valibot'
 import { Head } from '../../components/shared/Head'
 import { PROJECT_NAME } from '../../constants/project'
@@ -17,7 +16,7 @@ const validationSearchParams = object({
 })
 
 export const Route = createFileRoute('/_layout/')({
-  validateSearch: valibotSearchValidator(validationSearchParams),
+  validateSearch: validationSearchParams,
   component: () => <Home />,
 })
 
