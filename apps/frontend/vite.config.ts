@@ -2,6 +2,7 @@ import tailwindcss from '@tailwindcss/vite'
 import { TanStackRouterVite } from '@tanstack/router-vite-plugin'
 import react from '@vitejs/plugin-react-swc'
 import { defineConfig } from 'vite'
+import mkcert from "vite-plugin-mkcert"
 
 export default defineConfig({
   define: {
@@ -12,6 +13,7 @@ export default defineConfig({
     host: true,
   },
   plugins: [
+    mkcert(),
     react(),
     TanStackRouterVite({
       routesDirectory: 'src/routes',
