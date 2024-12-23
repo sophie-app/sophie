@@ -23,7 +23,7 @@ const makeColorPalette = (color: string) => ({
 })
 
 const config = {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}', './src/**/.*.{js,ts,jsx,tsx}'],
+  content: ['./index.html', './src/**/*.{ts,tsx}', './src/**/.*.{ts,tsx}'],
   darkMode: 'class',
   theme: {
     extend: {
