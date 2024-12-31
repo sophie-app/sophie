@@ -18,6 +18,7 @@ export type BindingsType = {
   OTP_GTFS_API_BASEURL: string
   OPENAI_API_KEY: string
   OPENAI_BASE_URL: string | undefined
+  GOOGLE_MAPS_API_KEY: string
 }
 
 type VariablesType = {
