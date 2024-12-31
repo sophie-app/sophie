@@ -50,6 +50,9 @@ importers:
       openapi-fetch:
         specifier: ^0.13.3
         version: 0.13.3
+      zod:
+        specifier: ^3.24.1
+        version: 3.24.1
     devDependencies:
       '@biomejs/biome':
         specifier: ^1.9.4
