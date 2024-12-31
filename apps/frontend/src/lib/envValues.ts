@@ -1,7 +1,7 @@
-import { url, object, parse, pipe, string } from 'valibot'
+import { z } from 'zod'
 
-const envValuesSchema = object({
-  VITE_BACKEND_BASE_URL: pipe(string(), url()),
+const envValuesSchema = z.object({
+  VITE_BACKEND_BASE_URL: z.string().url(),
 })
 
-export const env = parse(envValuesSchema, import.meta.env)
+export const env = envValuesSchema.parse(import.meta.env)
