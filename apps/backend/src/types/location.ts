@@ -1,8 +1,10 @@
-import { type InferOutput, maxValue, minValue, number, object, pipe } from 'valibot'
+import { z } from 'zod'
 
-export const locationSchema = object({
-  lat: pipe(number(), minValue(-90), maxValue(90)),
-  lon: pipe(number(), minValue(-180), maxValue(180)),
-})
+export const locationSchema = z
+  .object({
+    lat: z.number().min(-90).max(90),
+    lon: z.number().min(-180).max(180),
+  })
+  .strict()
 
-export type Location = InferOutput<typeof locationSchema>
+export type Location = z.infer<typeof locationSchema>

@@ -1,15 +1,15 @@
 import { createOpenAI } from '@ai-sdk/openai'
 import { createMiddleware } from 'hono/factory'
 import OpenAI from 'openai'
-import { url, object, optional, parse, pipe, string } from 'valibot'
+import { z } from 'zod'
 
-const aiEnvSchema = object({
-  OPENAI_API_KEY: string(),
-  OPENAI_BASE_URL: optional(pipe(string(), url())),
+const aiEnvSchema = z.object({
+  OPENAI_API_KEY: z.string(),
+  OPENAI_BASE_URL: z.string().url().optional(),
 })
 
 export const aiMiddleware = createMiddleware(async (c, next) => {
-  const { OPENAI_API_KEY, OPENAI_BASE_URL } = parse(aiEnvSchema, c.env)
+  const { OPENAI_API_KEY, OPENAI_BASE_URL } = aiEnvSchema.parse(c.env)
 
   const openaiProvider = createOpenAI({
     apiKey: OPENAI_API_KEY,

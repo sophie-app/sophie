@@ -1,18 +1,12 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { array, object, optional, pipe, string, transform, union } from 'valibot'
+import { z } from 'zod'
 import { Head } from '../../components/shared/Head'
 import { PROJECT_NAME } from '../../constants/project'
 
-const validationSearchParams = object({
-  params: optional(
-    union([
-      pipe(
-        string(),
-        transform((value) => [value]),
-      ),
-      array(string()),
-    ]),
-  ),
+const validationSearchParams = z.object({
+  params: z
+    .union([z.string().transform((input) => [input]), z.array(z.string()).min(1)])
+    .default([]),
 })
 
 export const Route = createFileRoute('/_layout/')({
@@ -27,9 +21,7 @@ const Home = () => {
     <div>
       <Head title="Home" description={`Top Page of ${PROJECT_NAME}`} />
       <p>Hello {PROJECT_NAME} !</p>
-      {params !== undefined && params.length > 0 && (
-        <p>Params: {params.map((param) => param).join(', ')}</p>
-      )}
+      {params.length > 0 && <p>Params: {params.map((param) => param).join(', ')}</p>}
     </div>
   )
 }
