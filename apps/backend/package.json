@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "^0.0.67",
-    "@hono/valibot-validator": "^0.4.1",
+    "@hono/zod-validator": "^0.4.2",
     "@urql/core": "^5.1.0",
     "ai": "^3.4.33",
     "hono": "^4.6.14",
