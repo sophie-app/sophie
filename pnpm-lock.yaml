@@ -78,9 +78,6 @@ importers:
 
   apps/frontend:
     dependencies:
-      '@chengsokdara/use-whisper':
-        specifier: ^0.2.0
-        version: 0.2.0(react@18.3.1)
       '@tabler/icons-react':
         specifier: ^3.26.0
         version: 3.26.0(react@18.3.1)
@@ -376,16 +373,6 @@ packages:
     engines: {node: '>=14.21.3'}
     cpu: [x64]
     os: [win32]
-
-  '@chengsokdara/react-hooks-async@0.0.2':
-    resolution: {integrity: sha512-m7fyEj3b4qLADHHrAkucVBBpuJJ+ZjrQjTSyj/TmQTZrmgDS5MDEoYLaN48+YSho1z8YxelUwDTgUEdSjR03fw==}
-    peerDependencies:
-      react: '*'
-
-  '@chengsokdara/use-whisper@0.2.0':
-    resolution: {integrity: sha512-3AKdXiJ4DiEQ8VRHi5P8iSpOVkL1VhAa/Fvp/u1IOeUI+Ztk09J0uKFD3sZxGdoXXkc6MrUN66mkMMGOHypvWA==}
-    peerDependencies:
-      react: '*'
 
   '@cloudflare/kv-asset-handler@0.3.4':
     resolution: {integrity: sha512-YLPHc8yASwjNkmcDMQMY35yiWjoKAKnhUbPRszBRS0YgH+IXtsMp61j+yTcnCE3oO2DgP0U3iejLC8FTtKDC8Q==}
@@ -861,10 +848,6 @@ packages:
   '@fastify/busboy@2.1.1':
     resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
     engines: {node: '>=14'}
-
-  '@ffmpeg/ffmpeg@0.11.6':
-    resolution: {integrity: sha512-uN8J8KDjADEavPhNva6tYO9Fj0lWs9z82swF3YXnTxWMBoFLGq3LZ6FLlIldRKEzhOBKnkVfA8UnFJuvGvNxcA==}
-    engines: {node: '>=12.16.1'}
 
   '@googlemaps/google-maps-services-js@3.4.0':
     resolution: {integrity: sha512-M1G+Jl4ri9YIODxC+RwvW4UkonTQ+ZFE5gjdIrKP/4/vYG2q2dDN1IgTp03I2MI0eGQs2FmQlxGJ0lBaZ5Ysyw==}
@@ -1676,9 +1659,6 @@ packages:
     resolution: {integrity: sha512-GGTKBX4SD7Wdb8mqeDLni2oaRGYQWjWHGKPQ24ZMnUtKfcsVoiv4uX8+LJr1K6U5VW2Lu1BwJnj7uiori0YtRw==}
     engines: {node: ^12.22.0 || ^14.16.0 || ^16.0.0 || >=17.0.0}
 
-  hark@1.2.3:
-    resolution: {integrity: sha512-u68vz9SCa38ESiFJSDjqK8XbXqWzyot7Cj6Y2b6jk2NJ+II3MY2dIrLMg/kjtIAun4Y1DHF/20hfx4rq1G5GMg==}
-
   has-flag@3.0.0:
     resolution: {integrity: sha512-sKJf1+ceQBr4SMkvQnBDNDtf4TXpVhVGateu0t918bl30FnbE2m4vNLX+VWe/dpjlb+HugGYzW7uQXH98HPEYw==}
     engines: {node: '>=4'}
@@ -1724,9 +1704,6 @@ packages:
   is-number@7.0.0:
     resolution: {integrity: sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==}
     engines: {node: '>=0.12.0'}
-
-  is-url@1.2.4:
-    resolution: {integrity: sha512-ITvGim8FhRiYe4IQ5uHSkj7pVaPDrCTkNd3yq3cV7iZAcJdHTUMPMEHcqSOy9xZ9qFenQCvi+2wjH9a1nXqHww==}
 
   itty-time@1.0.6:
     resolution: {integrity: sha512-+P8IZaLLBtFv8hCkIjcymZOp4UJ+xW6bSlQsXGqrkmJh7vSiMFSlNne0mCYagEE0N7HDNR5jJBRxwN0oYv61Rw==}
@@ -1778,10 +1755,6 @@ packages:
     resolution: {integrity: sha512-3QItJOXp2AP1uv7waBkao5nCvhEv+QmJAd38Ybq7wNI74Q+BBmnLn4EDKz6yI9xGAIQoUF87qHt+kc1IVxB4zQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
-
-  lamejs@https://codeload.github.com/zhuker/lamejs/tar.gz/582bbba6a12f981b984d8fb9e1874499fed85675:
-    resolution: {tarball: https://codeload.github.com/zhuker/lamejs/tar.gz/582bbba6a12f981b984d8fb9e1874499fed85675}
-    version: 1.2.1
 
   lefthook-darwin-arm64@1.10.0:
     resolution: {integrity: sha512-UeVe5Jtb4uuN8elqDpw3Uf7HnZ183xrnoc9Wfqzw2Yc/qt1uHWkBQGqSlWe83HkBaMBlwuGF+V5mcycz/Dhd+w==}
@@ -2070,19 +2043,12 @@ packages:
   recordrtc@5.6.2:
     resolution: {integrity: sha512-1QNKKNtl7+KcwD1lyOgP3ZlbiJ1d0HtXnypUy7yq49xEERxk31PHvE9RCciDrulPCY7WJ+oz0R9hpNxgsIurGQ==}
 
-  regenerator-runtime@0.13.11:
-    resolution: {integrity: sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==}
-
   require-from-string@2.0.2:
     resolution: {integrity: sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw==}
     engines: {node: '>=0.10.0'}
 
   resolve-pkg-maps@1.0.0:
     resolution: {integrity: sha512-seS2Tj26TBVOC2NIc2rOe2y2ZO7efxITtLZcGSOnHHNOQ7CkiUBfw0Iw2ck6xkIhPwLhKNLS8BO+hEpngQlqzw==}
-
-  resolve-url@0.2.1:
-    resolution: {integrity: sha512-ZuF55hVUQaaczgOIwqWzkEcEidmlD/xl44x1UZnhOXcYuFN2S6+rcxpG+C1N3So0wvNI3DmJICUFfu2SxhBmvg==}
-    deprecated: https://github.com/lydell/resolve-url#deprecated
 
   resolve@1.22.10:
     resolution: {integrity: sha512-NPRy+/ncIMeDlTAsuqwKIiferiawhefFJtkNSW0qZJEqMEb+qBt/77B/jGeeek+F0uOeN05CDa6HXbbIgtVX4w==}
@@ -2289,9 +2255,6 @@ packages:
   uri-js-replace@1.0.1:
     resolution: {integrity: sha512-W+C9NWNLFOoBI2QWDp4UT9pv65r2w5Cx+3sTYFvtMdDBxkKt1syCqsUdSFAChbEe1uK5TfS04wt/nGwmaeIQ0g==}
 
-  use-strict@1.0.1:
-    resolution: {integrity: sha512-IeiWvvEXfW5ltKVMkxq6FvNf2LojMKvB2OCeja6+ct24S1XOmQw2dGr2JyndwACWAGJva9B7yPHwAmeA9QCqAQ==}
-
   use-sync-external-store@1.4.0:
     resolution: {integrity: sha512-9WXSPC5fMv61vaupRkCKCxsPxBocVnwakBEkMIHHpkTTg6icbJtg6jzgtLDm4bl3cSHAca52rYWih0k4K3PfHw==}
     peerDependencies:
@@ -2355,9 +2318,6 @@ packages:
 
   whatwg-url@5.0.0:
     resolution: {integrity: sha512-saE57nupxk6v3HY35+jzBwYa0rKSy0XR8JSxZPwgLr7ys0IBzhGviA1/TUGJLmSVqs8pb9AnvICXEuOHLprYTw==}
-
-  wildemitter@1.2.1:
-    resolution: {integrity: sha512-UMmSUoIQSir+XbBpTxOTS53uJ8s/lVhADCkEbhfRjUGFDPme/XGOb0sBWLx5sTz7Wx/2+TlAw1eK9O5lw5PiEw==}
 
   wonka@6.3.4:
     resolution: {integrity: sha512-CjpbqNtBGNAeyNS/9W6q3kSkKE52+FjIj7AkFlLr11s/VWGUu6a2CdYSdGxocIhIVjaW/zchesBQUKPVU69Cqg==}
@@ -2634,23 +2594,6 @@ snapshots:
   '@biomejs/cli-win32-x64@1.9.4':
     optional: true
 
-  '@chengsokdara/react-hooks-async@0.0.2(react@18.3.1)':
-    dependencies:
-      react: 18.3.1
-
-  '@chengsokdara/use-whisper@0.2.0(react@18.3.1)':
-    dependencies:
-      '@chengsokdara/react-hooks-async': 0.0.2(react@18.3.1)
-      '@ffmpeg/ffmpeg': 0.11.6
-      axios: 1.7.9(debug@4.4.0)
-      hark: 1.2.3
-      lamejs: https://codeload.github.com/zhuker/lamejs/tar.gz/582bbba6a12f981b984d8fb9e1874499fed85675
-      react: 18.3.1
-      recordrtc: 5.6.2
-    transitivePeerDependencies:
-      - debug
-      - encoding
-
   '@cloudflare/kv-asset-handler@0.3.4':
     dependencies:
       mime: 3.0.0
@@ -2897,15 +2840,6 @@ snapshots:
     optional: true
 
   '@fastify/busboy@2.1.1': {}
-
-  '@ffmpeg/ffmpeg@0.11.6':
-    dependencies:
-      is-url: 1.2.4
-      node-fetch: 2.7.0
-      regenerator-runtime: 0.13.11
-      resolve-url: 0.2.1
-    transitivePeerDependencies:
-      - encoding
 
   '@googlemaps/google-maps-services-js@3.4.0':
     dependencies:
@@ -3726,10 +3660,6 @@ snapshots:
 
   graphql@16.9.0: {}
 
-  hark@1.2.3:
-    dependencies:
-      wildemitter: 1.2.1
-
   has-flag@3.0.0: {}
 
   hasown@2.0.2:
@@ -3771,8 +3701,6 @@ snapshots:
 
   is-number@7.0.0: {}
 
-  is-url@1.2.4: {}
-
   itty-time@1.0.6: {}
 
   jiti@2.4.2: {}
@@ -3803,10 +3731,6 @@ snapshots:
       '@types/diff-match-patch': 1.0.36
       chalk: 5.4.1
       diff-match-patch: 1.0.5
-
-  lamejs@https://codeload.github.com/zhuker/lamejs/tar.gz/582bbba6a12f981b984d8fb9e1874499fed85675:
-    dependencies:
-      use-strict: 1.0.1
 
   lefthook-darwin-arm64@1.10.0:
     optional: true
@@ -4061,13 +3985,9 @@ snapshots:
 
   recordrtc@5.6.2: {}
 
-  regenerator-runtime@0.13.11: {}
-
   require-from-string@2.0.2: {}
 
   resolve-pkg-maps@1.0.0: {}
-
-  resolve-url@0.2.1: {}
 
   resolve@1.22.10:
     dependencies:
@@ -4258,8 +4178,6 @@ snapshots:
 
   uri-js-replace@1.0.1: {}
 
-  use-strict@1.0.1: {}
-
   use-sync-external-store@1.4.0(react@18.3.1):
     dependencies:
       react: 18.3.1
@@ -4297,8 +4215,6 @@ snapshots:
     dependencies:
       tr46: 0.0.3
       webidl-conversions: 3.0.1
-
-  wildemitter@1.2.1: {}
 
   wonka@6.3.4: {}
 
