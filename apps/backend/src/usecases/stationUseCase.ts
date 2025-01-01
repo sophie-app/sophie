@@ -1,5 +1,5 @@
+import type { Location } from '../entities/locationEntity'
 import type { OdptClient } from '../lib/odptApiPath'
-import type { Location } from '../types/location'
 import { calculateSphericalDistance } from '../utils/calculateSphericalDistance'
 
 export const stationUseCases = {

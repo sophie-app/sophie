@@ -1,4 +1,4 @@
-import type { Location } from '../types/location'
+import type { Location } from '../entities/locationEntity'
 
 const degreeToRadian = (degree: number) => degree * (Math.PI / 180)
 const EARTH_RADIUS_KM = 6371

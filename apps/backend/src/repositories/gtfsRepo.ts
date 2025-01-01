@@ -1,6 +1,6 @@
 import type { Client } from '@urql/core'
 import { graphql } from 'gql.tada'
-import type { Location } from '../types/location'
+import type { Location } from '../entities/locationEntity'
 
 export const gtfsRepo = {
   getRoute: async (gtfsApiClient: Client, from: Location, to: Location) => {
