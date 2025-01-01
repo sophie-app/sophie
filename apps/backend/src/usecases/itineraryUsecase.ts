@@ -21,7 +21,7 @@ export const itineraryUseCases = {
         getCurrentDate: tool({
           description: '現在の日時を取得します',
           parameters: z.object({}),
-          execute: async () => new Date().toISOString(),
+          execute: async () => new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' }),
         }),
         getCurrentLocation: tool({
           description: 'ユーザーの現在地の緯度経度を取得します',
