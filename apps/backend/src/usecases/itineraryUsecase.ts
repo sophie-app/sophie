@@ -16,6 +16,7 @@ export const itineraryUseCases = {
         { role: 'system', content: parseItinerarySystemPrompt },
         { role: 'user', content: data.input },
       ],
+      maxSteps: 25,
       tools: {
         getCurrentDate: tool({
           description: '現在の日時を取得します',
