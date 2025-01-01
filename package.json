@@ -19,5 +19,10 @@
   "packageManager": "pnpm@9.12.0",
   "engines": {
     "node": ">=20"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "@googlemaps/google-maps-services-js": "patches/@googlemaps__google-maps-services-js.patch"
+    }
   }
 }

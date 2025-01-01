@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  '@googlemaps/google-maps-services-js':
+    hash: zbfnrlmblie6gqvtu3kvqc7md4
+    path: patches/@googlemaps__google-maps-services-js.patch
+
 importers:
 
   .:
@@ -31,7 +36,7 @@ importers:
         version: 1.0.11(zod@3.24.1)
       '@googlemaps/google-maps-services-js':
         specifier: ^3.4.0
-        version: 3.4.0
+        version: 3.4.0(patch_hash=zbfnrlmblie6gqvtu3kvqc7md4)
       '@hono/zod-validator':
         specifier: ^0.4.2
         version: 0.4.2(hono@4.6.14)(zod@3.24.1)
@@ -2841,7 +2846,7 @@ snapshots:
 
   '@fastify/busboy@2.1.1': {}
 
-  '@googlemaps/google-maps-services-js@3.4.0':
+  '@googlemaps/google-maps-services-js@3.4.0(patch_hash=zbfnrlmblie6gqvtu3kvqc7md4)':
     dependencies:
       '@googlemaps/url-signature': 1.0.39
       agentkeepalive: 4.5.0
