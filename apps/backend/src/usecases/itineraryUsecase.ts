@@ -1,11 +1,19 @@
+import type { Client } from '@urql/core'
 import { type LanguageModel, Output, generateText, tool } from 'ai'
 import { z } from 'zod'
-import { userInputItinerarySchema } from '../entities/itineraryEntity'
+import { type UserInputItinerary, userInputItinerarySchema } from '../entities/itineraryEntity'
 import type { Location } from '../entities/locationEntity'
 import { parseItinerarySystemPrompt } from '../prompts/itinerary'
 import { geocodeRepo } from '../repositories/geocodeRepo'
+import { gtfsRepo } from '../repositories/gtfsRepo'
 
 export const itineraryUseCases = {
+  /**
+   * ユーザーの入力をAIを使用して解析し、出発地、到着地、出発時刻を取得します。
+   * @param data ユーザーの現在地と音声入力の文字起こしを含むデータ
+   * @param options AIモデルとGoogle Maps APIキー
+   * @returns 出発地、到着地、出発時刻を含むオブジェクト
+   */
   parseInput: async (
     data: { currentLocation: Location; input: string },
     options: { aiModel: LanguageModel; googleMapsApiKey: string },
@@ -44,5 +52,23 @@ export const itineraryUseCases = {
     })
 
     return experimental_output
+  },
+  /**
+   * ユーザーの入力した経路を取得します。
+   * @param gtfsApiClient GTFS APIクライアント
+   * @param data 出発地、到着地、出発時刻を含むオブジェクト (`UserInputItinerary`)
+   */
+  getRoute: async (gtfsApiClient: Client, data: UserInputItinerary) => {
+    const [itinerary] = await gtfsRepo.getRoute(
+      gtfsApiClient,
+      data.from,
+      data.to,
+      data.departureTime,
+    )
+
+    return {
+      ...data,
+      itinerary,
+    }
   },
 }
