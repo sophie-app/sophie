@@ -21,6 +21,9 @@
     "node": ">=20"
   },
   "pnpm": {
+    "overrides": {
+      "axios": "^1.7.9"
+    },
     "patchedDependencies": {
       "@googlemaps/google-maps-services-js": "patches/@googlemaps__google-maps-services-js.patch"
     }
