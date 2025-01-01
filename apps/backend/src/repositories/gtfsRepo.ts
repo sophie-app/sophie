@@ -1,11 +1,17 @@
 import type { Client } from '@urql/core'
 import { graphql } from 'gql.tada'
 import type { Location } from '../entities/locationEntity'
+import { formatDate, formatTime } from '../utils/formatDatetime'
 
 export const gtfsRepo = {
-  getRoute: async (gtfsApiClient: Client, from: Location, to: Location) => {
-    const currentDate = new Date().toLocaleDateString('ja-JP').replace('/', '-')
-    const currentTime = new Date().toLocaleTimeString('ja-JP', { hour12: false })
+  getRoute: async (
+    gtfsApiClient: Client,
+    from: Location,
+    to: Location,
+    departureDatetime: Date,
+  ) => {
+    const currentDate = formatDate(departureDatetime)
+    const currentTime = formatTime(departureDatetime)
 
     const query = graphql(`
       query PlanQuery($from: InputCoordinates!, $to: InputCoordinates!) {
