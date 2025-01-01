@@ -13,7 +13,7 @@ export const aiMiddleware = createMiddleware(async (c, next) => {
 
   const openaiProvider = createOpenAI({
     apiKey: OPENAI_API_KEY,
-    baseUrl: OPENAI_BASE_URL,
+    baseURL: OPENAI_BASE_URL,
   })
   const model = openaiProvider('gpt-4o')
 
