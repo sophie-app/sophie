@@ -6,7 +6,7 @@ export const userInputItinerarySchema = z.object({
   to: locationSchema,
   departureTime: z
     .string()
-    .date()
+    .datetime()
     .transform((date) => new Date(date)),
 })
 

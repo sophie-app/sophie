@@ -11,4 +11,5 @@ export const parseItinerarySystemPrompt = `
   - 地名や駅名などの名前が指定された場合、緯度と軽度を特定する
 - 出発時刻
   - ユーザーの要望に含まれない場合、現在時刻を出発時刻として扱う
+  - YYYY-MM-DDTHH:MM:SS形式で指定される
 `
