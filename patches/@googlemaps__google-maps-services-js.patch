@@ -1,0 +1,13 @@
+diff --git a/dist/adapter.js b/dist/adapter.js
+index 1a0452059bef053e71ecc189843bb2e46bd41e0f..5f512775e33560ca824f07762754757fe84d04b3 100644
+--- a/dist/adapter.js
++++ b/dist/adapter.js
+@@ -61,7 +61,7 @@ function settle(resolve, reject, response) {
+     }
+ }
+ exports.customAdapter = axios_1.default.getAdapter((config) => {
+-    const httpAdapter = axios_1.default.getAdapter("http");
++    const httpAdapter = axios_1.default.getAdapter("fetch");
+     return new Promise((resolve, reject) => {
+         httpAdapter(config)
+             .then((r) => {

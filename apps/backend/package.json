@@ -9,10 +9,11 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@ai-sdk/openai": "^0.0.67",
+    "@ai-sdk/openai": "^1.0.11",
+    "@googlemaps/google-maps-services-js": "^3.4.0",
     "@hono/zod-validator": "^0.4.2",
     "@urql/core": "^5.1.0",
-    "ai": "^3.4.33",
+    "ai": "^4.0.22",
     "hono": "^4.6.14",
     "odpt-openapi-generated": "workspace:^",
     "openai": "^4.77.0",

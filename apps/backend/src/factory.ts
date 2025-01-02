@@ -15,6 +15,10 @@ export type BindingsType = {
   FRONTEND_BASE_URL: string | undefined
   ODPT_ACCESS_TOKEN: string
   ODPT_CHALLENGE_ACCESS_TOKEN: string
+  OTP_GTFS_API_BASEURL: string
+  OPENAI_API_KEY: string
+  OPENAI_BASE_URL: string | undefined
+  GOOGLE_MAPS_API_KEY: string
 }
 
 type VariablesType = {
